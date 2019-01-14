@@ -5,117 +5,117 @@
 #include<time.h>
 using namespace std;
 
-//Student脌脿
+//Student类
 class Student{
 private:
-	int tag;              //脡戮鲁媒卤锚录脟1:脪脩脡戮0:脦麓脡戮   
-	string studentno;     //脩搂潞脜
-	string studentname;   //脨脮脙没
-	string  studentmajor; //脳篓脪碌
-	string  studentclass; //掳脿录露
-	string  studentmobile;//脢脰禄煤
+	int tag;              //删除标记1:已删0:未删   
+	string studentno;     //学号
+	string studentname;   //姓名
+	string  studentmajor; //专业
+	string  studentclass; //班级
+	string  studentmobile;//手机
 public:
 	Student();
-	int gettag();			    //禄帽脠隆脡戮鲁媒卤锚录脟
-	void settag();              //脡猫脰脙脡戮鲁媒卤锚录脟 
-	string getno();				//禄帽脠隆脩搂潞脜
-	void setno(string);			//脡猫脰脙脩搂潞脜
-	string getname();           //禄帽脠隆脨脮脙没 
-	void setname(string);       //脡猫脰脙脨脮脙没
-	string getmajor();          //禄帽脠隆脳篓脪碌
-	void setmajor(string);      //脡猫脰脙脳篓脪碌
-	string getclass();          //禄帽脠隆掳脿录露
-	void setclass(string);      //脡猫脰脙掳脿录露
-	string getmobile();			//禄帽脠隆脢脰禄煤潞脜
-	void setmobile(string);     //脡猫脰脙脢脰禄煤潞脜
-	void disp();                //脢盲鲁枚脩搂脡煤脨脜脧垄
+	int gettag();			    //获取删除标记
+	void settag();              //设置删除标记 
+	string getno();				//获取学号
+	void setno(string);			//设置学号
+	string getname();           //获取姓名 
+	void setname(string);       //设置姓名
+	string getmajor();          //获取专业
+	void setmajor(string);      //设置专业
+	string getclass();          //获取班级
+	void setclass(string);      //设置班级
+	string getmobile();			//获取手机号
+	void setmobile(string);     //设置手机号
+	void disp();                //输出学生信息
 	~Student();
 };
 
-//脠卤脢隆鹿鹿脭矛潞炉脢媒
+//缺省构造函数
 Student::Student()
 {
 	tag=0;
 }
 
-//脦枚鹿鹿潞炉脢媒	
+//析构函数	
 Student::~Student(){}
 
 
 
-//禄帽脠隆脡戮鲁媒卤锚录脟
+//获取删除标记
 int Student::gettag()
 {
 	return tag;
 }
 
-//脡猫脰脙脡戮鲁媒卤锚录脟 
+//设置删除标记 
 void Student::settag()
 {
 	tag=1;
 }
 
-//禄帽脠隆脩搂潞脜
+//获取学号
 string Student::getno()
 {
 	return studentno;
 }
 
-//脡猫脰脙脩搂潞脜				
+//设置学号				
 void Student::setno(string sno)
 {
 	studentno=sno;
 }
 
-//禄帽脠隆脨脮脙没
+//获取姓名
 string Student::getname()
 {
 	return studentname;
 }
 
-//脡猫脰脙脨脮脙没
+//设置姓名
 void Student::setname(string sname)
 {
 	studentname=sname;
 }
 
-//禄帽脠隆脳篓脪碌
+//获取专业
 string Student::getmajor()
 {
 	return studentmajor;
 }
 
-//脡猫脰脙脳篓脪碌
+//设置专业
 void Student::setmajor(string smajor)  
 {
 	studentmajor=smajor;
 }
 
-//禄帽脠隆掳脿录露
+//获取班级
 string Student::getclass()
 {
 	return studentclass;
 }
 
-//脡猫脰脙掳脿录露
+//设置班级
 void Student::setclass(string sclass)
 {
 	studentclass=sclass;
 }
 
-//禄帽脠隆脢脰禄煤潞脜	
+//获取手机号	
 string Student::getmobile()
 {
 	return studentmobile;
 }
 
-//脡猫脰脙脢脰禄煤潞脜
+//设置手机号
 void Student::setmobile(string smobile)
 {
 	studentmobile=smobile;
 }
 
-//脢盲鲁枚脩搂脡煤脨脜脧垄
+//输出学生信息
 void Student::disp()
 {
 	if(!tag)
@@ -130,39 +130,39 @@ const int Max=100;
 class Studentclass{
 private:
 	int top;
-	Student stu[Max];  //脩搂脡煤录脟脗录
+	Student stu[Max];  //学生记录
 public:
 	Studentclass();
 	~Studentclass();
-    void settop(int n);//脡猫脰脙脠脣脢媒
-	int gettop();      //禄帽脠隆脠脣脢媒
+    void settop(int n);//设置人数
+	int gettop();      //获取人数
 	
-	//虏氓脠毛
-	void stu_append();//虏氓脠毛脪禄赂枚脩搂脡煤
-	//脡戮鲁媒脪禄赂枚脩搂脡煤
-    void deleteno();    //脩搂潞脜脡戮鲁媒
-	void deletename();  //脨脮脙没脡戮鲁媒
-	void deletemajor(); //脳篓脪碌脡戮鲁媒
-	void deleteclass(); //掳脿录露脡戮鲁媒
-	void deletemobile();//脢脰禄煤潞脜脡戮鲁媒
-	void deleteall();   //脡戮鲁媒脣霉脫脨脩搂脡煤脨脜脧垄
+	//插入
+	void stu_append();//插入一个学生
+	//删除一个学生
+    void deleteno();    //学号删除
+	void deletename();  //姓名删除
+	void deletemajor(); //专业删除
+	void deleteclass(); //班级删除
+	void deletemobile();//手机号删除
+	void deleteall();   //删除所有学生信息
 	
-	void insertall();//脜煤脕驴碌录脠毛
-	//虏茅脩炉
-	void searchno();         //脩搂潞脜虏茅脩炉
-	int searchno(string sno);//脩搂潞脜虏茅脩炉
-	void searchname();       //脨脮脙没虏茅脩炉
-	void searchmajor();      //脳篓脪碌虏茅脩炉
-	void searchclass();      //掳脿录露虏茅脩炉
-	void searchmobile();     //脢脰禄煤潞脜虏茅脩炉
-	//赂眉脨脗
-	void updatename(); //赂眉脨脗脨脮脙没
-	void updatemajor(); //赂眉脨脗脳篓脪碌
-	void updateclass(); //赂眉脨脗掳脿录露
-	void updatemobile();//赂眉脨脗脢脰禄煤潞脜
-	//脢盲鲁枚脩搂脡煤脨脜脧垄
-	void dispall();  //脣霉脫脨脩搂脡煤
-	void disp(int n);//脪禄赂枚脩搂脡煤
+	void insertall();//批量导入
+	//查询
+	void searchno();         //学号查询
+	int searchno(string sno);//学号查询
+	void searchname();       //姓名查询
+	void searchmajor();      //专业查询
+	void searchclass();      //班级查询
+	void searchmobile();     //手机号查询
+	//更新
+	void updatename(); //更新姓名
+	void updatemajor(); //更新专业
+	void updateclass(); //更新班级
+	void updatemobile();//更新手机号
+	//输出学生信息
+	void dispall();  //所有学生
+	void disp(int n);//一个学生
 
 	friend ostream& operator<<(ostream& output,Student& s)
 	{
@@ -188,16 +188,16 @@ public:
 	}
 };
 
-//鹿鹿脭矛潞炉脢媒露脕脠毛脩搂脡煤脨脜脧垄
+//构造函数读入学生信息
 Studentclass::Studentclass()
 {
 	top=0;
 	ifstream in("student.txt");
 	if(!in)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
-	while(!in.eof())//eof路碌禄脴卤锚脰戮脢脟路帽碌陆脕脣脦脛录镁脛漏脦虏
+	while(!in.eof())//eof返回标志是否到了文件末尾
 	{
 		in>>stu[top];
 		top++;
@@ -205,13 +205,13 @@ Studentclass::Studentclass()
 	in.close();
 }
 
-//脦枚鹿鹿潞炉脢媒脢盲鲁枚脩搂脡煤脨脜脧垄
+//析构函数输出学生信息
 Studentclass::~Studentclass()
 {
 	ofstream out("student.txt");
 	if(!out)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	for(int i=0;i<top;i++)
 	{
@@ -223,54 +223,54 @@ Studentclass::~Studentclass()
 	out.close();
 }
 
-//脡猫脰脙脠脣脢媒
+//设置人数
 void Studentclass::settop(int n)
 {
 	top=n;
 }
 
-//禄帽脠隆脠脣脢媒
+//获取人数
 int Studentclass::gettop()
 {
 	return top;
 }
 
-//虏氓脠毛脪禄赂枚脩搂脡煤
+//插入一个学生
 void Studentclass::stu_append()
 {
 	string sno,sname,smajor,sclass,smobile;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要插入学生的学号:";
 	cin>>sno;
 	stu[top].setno(sno);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脩搂脡煤碌脛脨脮脙没:";
+	cout<<"请输入要插入学生的姓名:";
 	cin>>sname;
 	stu[top].setname(sname);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脩搂脡煤碌脛脳篓脪碌:";
+	cout<<"请输入要插入学生的专业:";
 	cin>>smajor;
 	stu[top].setmajor(smajor);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脩搂脡煤碌脛掳脿录露:";
+	cout<<"请输入要插入学生的班级:";
 	cin>>sclass;
 	stu[top].setclass(sclass);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脩搂脡煤碌脛脢脰禄煤潞脜:";
+	cout<<"请输入要插入学生的手机号:";
 	cin>>smobile;
 	stu[top].setmobile(smobile);
 	cout<<endl;
-	cout<<"脪陋虏氓脠毛碌脛脩搂脡煤脨脜脧垄脦陋:"<<endl;
+	cout<<"要插入的学生信息为:"<<endl;
 	stu[top].disp();
 	cout<<endl;
 	top++;
 }
 
-//脩搂潞脜脡戮鲁媒脪禄赂枚脩搂脡煤
+//学号删除一个学生
 void Studentclass::deleteno()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脩搂脡煤脧脗卤锚
+	int temp=-1;//要删除的学生下标
 	string sno;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要删除学生的学号:";
 	cin>>sno;
 	for(int i=0;i<top;i++)
 	{
@@ -281,17 +281,17 @@ void Studentclass::deleteno()
 		}
 	}
 	if(temp!=-1)
-		cout<<"脡戮鲁媒脥锚鲁脡!"<<endl<<endl;
+		cout<<"删除完成!"<<endl<<endl;
 	else
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl<<endl;
 }
 
-//脨脮脙没脡戮鲁媒脪禄赂枚脩搂脡煤
+//姓名删除一个学生
 void Studentclass::deletename()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脩搂脡煤脧脗卤锚
+	int temp=-1;//要删除的学生下标
 	string sname;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脩搂脡煤碌脛脨脮脙没:";
+	cout<<"请输入要删除学生的姓名:";
 	cin>>sname;
 	for(int i=0;i<top;i++)
 	{
@@ -302,17 +302,17 @@ void Studentclass::deletename()
 		}
 	}
 	if(temp!=-1)
-		cout<<"脡戮鲁媒脥锚鲁脡!"<<endl<<endl;
+		cout<<"删除完成!"<<endl<<endl;
 	else
-		cout<<"脙禄脫脨脮脪碌陆脨脮脙没脦陋"<<sname<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到姓名为"<<sname<<"的学生!"<<endl<<endl;
 }
 
-//脳篓脪碌脡戮鲁媒脪禄赂枚脩搂脡煤
+//专业删除一个学生
 void Studentclass::deletemajor()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脩搂脡煤脧脗卤锚
+	int temp=-1;//要删除的学生下标
 	string smajor;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脩搂脡煤碌脛脳篓脪碌:";
+	cout<<"请输入要删除学生的专业:";
 	cin>>smajor;
 	for(int i=0;i<top;i++)
 	{
@@ -323,17 +323,17 @@ void Studentclass::deletemajor()
 		}
 	}
 	if(temp!=-1)
-		cout<<"脡戮鲁媒脥锚鲁脡!"<<endl<<endl;
+		cout<<"删除完成!"<<endl<<endl;
 	else
-		cout<<"脙禄脫脨脮脪碌陆脳篓脪碌脦陋"<<smajor<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到专业为"<<smajor<<"的学生!"<<endl<<endl;
 }
 
-//掳脿录露脡戮鲁媒脪禄赂枚脩搂脡煤
+//班级删除一个学生
 void Studentclass::deleteclass()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脩搂脡煤脧脗卤锚
+	int temp=-1;//要删除的学生下标
 	string sclass;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脩搂脡煤碌脛掳脿录露:";
+	cout<<"请输入要删除学生的班级:";
 	cin>>sclass;
 	for(int i=0;i<top;i++)
 	{
@@ -344,17 +344,17 @@ void Studentclass::deleteclass()
 		}	
 	}
 	if(temp!=-1)
-		cout<<"脡戮鲁媒脥锚鲁脡!"<<endl<<endl;
+		cout<<"删除完成!"<<endl<<endl;
 	else
-		cout<<"脙禄脫脨脮脪碌陆掳脿录露脦陋"<<sclass<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到班级为"<<sclass<<"的学生!"<<endl<<endl;
 }
 
-//脢脰禄煤潞脜脡戮鲁媒脪禄赂枚脩搂脡煤
+//手机号删除一个学生
 void Studentclass::deletemobile()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脩搂脡煤脧脗卤锚
+	int temp=-1;//要删除的学生下标
 	string smobile;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脩搂脡煤碌脛脢脰禄煤潞脜:";
+	cout<<"请输入要删除学生的手机号:";
 	cin>>smobile;
 	for(int i=0;i<top;i++)
 	{
@@ -365,18 +365,18 @@ void Studentclass::deletemobile()
 		}	
 	}
 	if(temp!=-1)
-		cout<<"脡戮鲁媒脥锚鲁脡!"<<endl<<endl;
+		cout<<"删除完成!"<<endl<<endl;
 	else
-		cout<<"脙禄脫脨脮脪碌陆脢脰禄煤潞脜脦陋"<<smobile<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到手机号为"<<smobile<<"的学生!"<<endl<<endl;
 }
 
-//脜煤脕驴碌录脠毛
+//批量导入
 void Studentclass::insertall()
 {
 	ifstream in("s.txt");
 	if(!in)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	while(!in.eof())
 	{
@@ -384,26 +384,26 @@ void Studentclass::insertall()
 		top++;
 	}
 	in.close();
-	cout<<"脩搂脡煤脨脜脧垄碌录脠毛脥锚鲁脡!"<<endl<<endl;
+	cout<<"学生信息导入完成!"<<endl<<endl;
 }
 
-//脡戮鲁媒脣霉脫脨脩搂脡煤脨脜脧垄
+//删除所有学生信息
 void Studentclass::deleteall()
 {
 	for(int i=0;i<top;i++)
 	{
 		stu[i].settag();
 	}
-	cout<<"脪脩脠芦虏驴脡戮鲁媒!"<<endl<<endl;
+	cout<<"已全部删除!"<<endl<<endl;
 }
 
 
-//脩搂潞脜虏茅脩炉
+//学号查询
 void Studentclass::searchno()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sno;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要查询学生的学号:";
 	cin>>sno;
 	cout<<endl;
 	for(int i=0;i<top;i++)
@@ -411,13 +411,13 @@ void Studentclass::searchno()
 		if(stu[i].getno()==sno)
 		{
 			k=1;
-			cout<<"Found脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl<<endl;
+			cout<<"Found学号为"<<sno<<"的学生!"<<endl<<endl;
 			stu[i].disp();
 			cout<<endl;
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl<<endl;
 }
 
 
@@ -433,12 +433,12 @@ int Studentclass::searchno(string sno)
 }
 		
 
-//脨脮脙没虏茅脩炉
+//姓名查询
 void Studentclass::searchname()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sname;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脩搂脡煤碌脛脨脮脙没:";
+	cout<<"请输入要查询学生的姓名:";
 	cin>>sname;
 	cout<<endl;
 	for(int i=0;i<top;i++)
@@ -446,20 +446,20 @@ void Studentclass::searchname()
 		if(stu[i].getname()==sname)
 		{
 			k=1;
-			cout<<"Found脨脮脙没脦陋"<<sname<<"碌脛脩搂脡煤!"<<endl<<endl;
+			cout<<"Found姓名为"<<sname<<"的学生!"<<endl<<endl;
 			stu[i].disp();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脨脮脙没脦陋"<<sname<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到姓名为"<<sname<<"的学生!"<<endl<<endl;
 }
 
-//脳篓脪碌虏茅脩炉
+//专业查询
 void Studentclass::searchmajor()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string smajor;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脩搂脡煤碌脛脳篓脪碌:";
+	cout<<"请输入要查询学生的专业:";
 	cin>>smajor;
 	cout<<endl;
 	for(int i=0;i<top;i++)
@@ -467,20 +467,20 @@ void Studentclass::searchmajor()
 		if(stu[i].getmajor()==smajor)
 		{
 			k=1;
-			cout<<"Found脳篓脪碌脦陋"<<smajor<<"碌脛脩搂脡煤!"<<endl<<endl;
+			cout<<"Found专业为"<<smajor<<"的学生!"<<endl<<endl;
 			stu[i].disp();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脳篓脪碌脦陋"<<smajor<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到专业为"<<smajor<<"的学生!"<<endl<<endl;
 }
 
-//掳脿录露虏茅脩炉
+//班级查询
 void Studentclass::searchclass()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sclass;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脩搂脡煤碌脛掳脿录露:";
+	cout<<"请输入要查询学生的班级:";
 	cin>>sclass;
 	cout<<endl;
 	for(int i=0;i<top;i++)
@@ -488,20 +488,20 @@ void Studentclass::searchclass()
 		if(stu[i].getclass()==sclass)
 		{
 			k=1;
-			cout<<"Found掳脿录露脦陋"<<sclass<<"碌脛脩搂脡煤!"<<endl<<endl;
+			cout<<"Found班级为"<<sclass<<"的学生!"<<endl<<endl;
 			stu[i].disp();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆掳脿录露脦陋"<<sclass<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到班级为"<<sclass<<"的学生!"<<endl<<endl;
 }
 
-//脢脰禄煤潞脜虏茅脩炉
+//手机号查询
 void Studentclass::searchmobile()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string smobile;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脩搂脡煤碌脛脢脰禄煤潞脜:";
+	cout<<"请输入要查询学生的手机号:";
 	cin>>smobile;
 	cout<<endl;
 	for(int i=0;i<top;i++)
@@ -509,28 +509,28 @@ void Studentclass::searchmobile()
 		if(stu[i].getmobile()==smobile)
 		{
 			k=1;
-			cout<<"Found脢脰禄煤脦陋"<<smobile<<"碌脛脩搂脡煤!"<<endl<<endl;
+			cout<<"Found手机为"<<smobile<<"的学生!"<<endl<<endl;
 			stu[i].disp();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脢脰禄煤脦陋"<<smobile<<"碌脛脩搂脡煤!"<<endl<<endl;
+		cout<<"没有找到手机为"<<smobile<<"的学生!"<<endl<<endl;
 }
 
-//赂眉脨脗脨脮脙没
+//更新姓名
 void Studentclass::updatename()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sno;
 	string sname;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要修改的学生的学号:";
 	cin>>sno;
 	for(int i=0;i<top;i++)
 	{
 		if(stu[i].getno()==sno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脨脮脙没:";
+			cout<<"请输入要修改的学生的姓名:";
 			cin>>sname;
 			stu[i].setname(sname);
 			stu[i].disp();
@@ -538,23 +538,23 @@ void Studentclass::updatename()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl;
 }
 
-//赂眉脨脗脳篓脪碌
+//更新专业
 void Studentclass::updatemajor()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sno;
 	string smajor;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要修改的学生的学号:";
 	cin>>sno;
 	for(int i=0;i<top;i++)
 	{
 		if(stu[i].getno()==sno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脳篓脪碌:";
+			cout<<"请输入要修改的学生的专业:";
 			cin>>smajor;
 			stu[i].setmajor(smajor);
 			stu[i].disp();
@@ -562,23 +562,23 @@ void Studentclass::updatemajor()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl;
 }
 
-//赂眉脨脗掳脿录露
+//更新班级
 void Studentclass::updateclass()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sno;
 	string sclass;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要修改的学生的学号:";
 	cin>>sno;
 	for(int i=0;i<top;i++)
 	{
 		if(stu[i].getno()==sno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛掳脿录露:";
+			cout<<"请输入要修改的学生的班级:";
 			cin>>sclass;
 			stu[i].setclass(sclass);
 			stu[i].disp();
@@ -586,23 +586,23 @@ void Studentclass::updateclass()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl;
 }
 
-//赂眉脨脗脢脰禄煤潞脜
+//更新手机号
 void Studentclass::updatemobile()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string sno;
 	string smobile;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脩搂潞脜:";
+	cout<<"请输入要修改的学生的学号:";
 	cin>>sno;
 	for(int i=0;i<top;i++)
 	{
 		if(stu[i].getno()==sno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脩搂脡煤碌脛脢脰禄煤潞脜:";
+			cout<<"请输入要修改的学生的手机号:";
 			cin>>smobile;
 			stu[i].setmobile(smobile);
 			stu[i].disp();
@@ -610,64 +610,64 @@ void Studentclass::updatemobile()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脩搂潞脜脦陋"<<sno<<"碌脛脩搂脡煤!"<<endl;
+		cout<<"没有找到学号为"<<sno<<"的学生!"<<endl;
 }
 
 
-//脢盲鲁枚脣霉脫脨脩搂脡煤脨脜脧垄
+//输出所有学生信息
 void Studentclass::dispall()
 {
-	cout<<"脩搂脡煤禄霉卤戮脨脜脧垄脠莽脧脗:"<<endl<<endl;
-	cout<<"   脩搂潞脜"<<setw(12)<<"脨脮脙没"<<setw(12)<<"脳篓脪碌"<<setw(12)<<"掳脿录露"<<setw(12)<<"脢脰禄煤"<<endl;
+	cout<<"学生基本信息如下:"<<endl<<endl;
+	cout<<"   学号"<<setw(12)<<"姓名"<<setw(12)<<"专业"<<setw(12)<<"班级"<<setw(12)<<"手机"<<endl;
 	for(int i=0;i<top;i++)
 	{
 		stu[i].disp();
 	}
 }
 
-//脢盲鲁枚脪禄赂枚脩搂脡煤脨脜脧垄
+//输出一个学生信息
 void Studentclass::disp(int n)
 {
-	cout<<"脩搂脡煤禄霉卤戮脨脜脧垄脠莽脧脗:"<<endl;
-	cout<<"脡戮鲁媒卤锚录脟"<<setw(8)<<"脩搂潞脜"<<setw(12)<<"脨脮脙没"<<setw(12)<<"脳篓脪碌"<<setw(12)<<"掳脿录露"<<setw(12)<<"脢脰禄煤"<<endl;
+	cout<<"学生基本信息如下:"<<endl;
+	cout<<"删除标记"<<setw(8)<<"学号"<<setw(12)<<"姓名"<<setw(12)<<"专业"<<setw(12)<<"班级"<<setw(12)<<"手机"<<endl;
 		stu[n].disp();
 }
 
 
 
-//Book	 脥录脢茅脌脿 
+//Book	 图书类 
 class Book{
 private:
-	int tag;	      //脡戮鲁媒卤锚录脟1:脪脩脡戮0:脦麓脡戮   
-	string bookno;	  //脥录脢茅卤脿潞脜   
-    string bookname;  //脢茅脙没   
-	string author;    //脳梅脮脽
-    string  publisher;//鲁枚掳忙脡莽
-	int totalnum;	  //鹿脻虏脴脢茅脕驴
-	int borrownum;	  //陆猫鲁枚脕驴
-    int star;         //脥录脢茅脨脟录露1-5
+	int tag;	      //删除标记1:已删0:未删   
+	string bookno;	  //图书编号   
+    string bookname;  //书名   
+	string author;    //作者
+    string  publisher;//出版社
+	int totalnum;	  //馆藏书量
+	int borrownum;	  //借出量
+    int star;         //图书星级1-5
 public:
 	Book();
 	~Book();
-	int getbooktag();         //禄帽脠隆脡戮鲁媒卤锚录脟
-	void setbooktag();        //脡猫脰脙脡戮鲁媒卤锚录脟
-	string getbookno();       //禄帽脠隆脥录脢茅卤脿潞脜
-	void setbookno(string);   //脡猫脰脙脥录脢茅卤脿潞脜
-	string getbookname();     //禄帽脠隆脢茅脙没
-	void setbookname(string); //脡猫脰脙脢茅脙没
-	string getauthor();       //禄帽脠隆脳梅脮脽
-	void setauthor(string);   //脡猫脰脙脳梅脮脽
-	string getpublisher();    //禄帽脠隆鲁枚掳忙脡莽
-	void setpublisher(string);//脡猫脰脙鲁枚掳忙脡莽
-	int gettotalnum();        //禄帽脠隆鹿脻虏脴脢茅脕驴
-	void settotalnum(int);    //脡猫脰脙鹿脻虏脴脢茅脕驴
-	int getborrownum();       //禄帽脠隆陆猫鲁枚脕驴
-	void setborrownum(int);   //脡猫脰脙陆猫鲁枚脕驴
-	int getstar();            //禄帽脠隆脥录脢茅脨脟录露1-5
-	void setstar(int);        //脡猫脰脙脥录脢茅脨脟录露1-5
-	void dispbook();          //脧脭脢戮脥录脢茅脨脜脧垄
-    void upborrownum();       //陆猫鲁枚脕驴录脫1
-    void downborrownum();     //陆猫鲁枚脕驴录玫1
+	int getbooktag();         //获取删除标记
+	void setbooktag();        //设置删除标记
+	string getbookno();       //获取图书编号
+	void setbookno(string);   //设置图书编号
+	string getbookname();     //获取书名
+	void setbookname(string); //设置书名
+	string getauthor();       //获取作者
+	void setauthor(string);   //设置作者
+	string getpublisher();    //获取出版社
+	void setpublisher(string);//设置出版社
+	int gettotalnum();        //获取馆藏书量
+	void settotalnum(int);    //设置馆藏书量
+	int getborrownum();       //获取借出量
+	void setborrownum(int);   //设置借出量
+	int getstar();            //获取图书星级1-5
+	void setstar(int);        //设置图书星级1-5
+	void dispbook();          //显示图书信息
+    void upborrownum();       //借出量加1
+    void downborrownum();     //借出量减1
 };
 
 Book::Book()
@@ -678,103 +678,103 @@ Book::Book()
 
 Book::~Book(){}
 
-//禄帽脠隆脡戮鲁媒卤锚录脟
+//获取删除标记
 int Book::getbooktag()
 {
 	return tag;
 }
 
-//脡猫脰脙脡戮鲁媒卤锚录脟
+//设置删除标记
 void Book::setbooktag()
 {
 	tag=1;
 }
 
-//禄帽脠隆脥录脢茅卤脿潞脜
+//获取图书编号
 string Book::getbookno()
 {
 	return bookno;
 }
 
-//脡猫脰脙脥录脢茅卤脿潞脜
+//设置图书编号
 void Book::setbookno(string bno)
 {
 	bookno=bno;
 }
 
-//禄帽脠隆脢茅脙没
+//获取书名
 string Book::getbookname()
 {
 	return bookname;
 }
 
-//脡猫脰脙脢茅脙没
+//设置书名
 void Book::setbookname(string bname)
 {
 	bookname=bname; 
 }
 
-//禄帽脠隆脳梅脮脽
+//获取作者
 string Book::getauthor()
 {
 	return author;
 }
 
-//脡猫脰脙脳梅脮脽
+//设置作者
 void Book::setauthor(string bauthor)
 {
 	author=bauthor;
 }
 
-//禄帽脠隆鲁枚掳忙脡莽
+//获取出版社
 string Book::getpublisher()
 {
 	return publisher;
 }
 
-//脡猫脰脙鲁枚掳忙脡莽
+//设置出版社
 void Book::setpublisher(string bpublisher)
 {
 	publisher=bpublisher;
 }
 
-//禄帽脠隆鹿脻虏脴脢茅脕驴
+//获取馆藏书量
 int Book::gettotalnum()
 {
 	return totalnum;
 }
 
-//脡猫脰脙鹿脻虏脴脢茅脕驴
+//设置馆藏书量
 void Book::settotalnum(int btotalnum)
 {
 	totalnum=btotalnum;
 }
 
-//禄帽脠隆陆猫鲁枚脕驴
+//获取借出量
 int Book::getborrownum()
 {
 	return borrownum;
 }
 
-//脡猫脰脙陆猫鲁枚脕驴
+//设置借出量
 void Book::setborrownum(int bborrownum)
 {
 	borrownum=bborrownum;
 }
 
-//禄帽脠隆脥录脢茅脨脟录露1-5
+//获取图书星级1-5
 int Book::getstar()
 {
 	return star;
 }
 
-//脡猫脰脙脥录脢茅脨脟录露1-5
+//设置图书星级1-5
 void Book::setstar(int bstar)
 {
 	star=bstar;
 }
 
-//脧脭脢戮脥录脢茅脨脜脧垄
+//显示图书信息
 void Book::dispbook()
 {
 	if(!tag)
@@ -787,21 +787,21 @@ void Book::dispbook()
 		cout<<borrownum<<setw(9);
 		for(int i=0;i<getstar();i++)
 		{
-			cout<<"隆卯";
+			cout<<"☆";
 		}
 		cout<<endl;
 	}	
 	cout<<endl;
 }
 
-//陆猫鲁枚脕驴录脫1
+//借出量加1
 void Book::upborrownum()
 {
 	borrownum++;
 	cout<<borrownum<<endl;
 }
 
-//陆猫鲁枚脕驴录玫1
+//借出量减1
 void Book::downborrownum()
 {
 	--borrownum;
@@ -809,46 +809,46 @@ void Book::downborrownum()
 }
 
 const int Maxb=100;
-//脥录脢茅驴芒脌脿
+//图书库类
 class BookClass{
 private:
-	int top;        //脥录脢茅录脟脗录脢媒脕驴
-    Book book[Maxb];//脥录脢茅录脟脗录
+	int top;        //图书记录数量
+    Book book[Maxb];//图书记录
 public:
 	BookClass();
 	~BookClass();
-	void settop(int n);     //脡猫脰脙脢媒脕驴
-	int gettop();           //禄帽脠隆脢媒脕驴
-	void getbookup(int i);  //脮脪碌陆露脭脫娄脥录脢茅+1
-	void getbookdown(int i);//脮脪碌陆露脭脫娄脥录脢茅-1	
-	int bookstar(int i);//碌脙碌陆露脭脫娄脥录脢茅碌脛脨脟录露
-	//虏氓脠毛
-	void book_append();//虏氓脠毛脪禄卤戮脢茅
-	void insertall();  //脜煤脕驴虏氓脠毛
-	//脡戮鲁媒
-	void deletebookno();   //脥录脢茅卤脿潞脜脡戮鲁媒
-	void deletebookname(); //脢茅脙没脡戮鲁媒
-	void deleteauthor();   //脳梅脮脽脡戮鲁媒
-	void deletepublisher();//鲁枚掳忙脡莽脡戮鲁媒
-	void deletestar();     //脨脟录露脡戮鲁媒
-	void deleteall();      //脡戮鲁媒脣霉脫脨脥录脢茅脨脜脧垄
-	//虏茅脩炉
-	void searchbookno();         //脥录脢茅卤脿潞脜虏茅脩炉
-	int searchbookno(string bno);//脥录脢茅卤脿潞脜虏茅脩炉
-	void searchbookname();       //脢茅脙没虏茅脩炉
-	void searchauthor();         //脳梅脮脽虏茅脩炉
-	void searchpublisher();      //鲁枚掳忙脡莽虏茅脩炉
-	void searchstar();           //脥录脢茅脨脟录露虏茅脩炉
-	//赂眉脨脗
-	void updatebookname(); //赂眉脨脗脢茅脙没
-	void updateauthor();   //赂眉脨脗脳梅脮脽
-	void updatepublisher();//赂眉脨脗鲁枚掳忙脡莽
-	void updatetotalnum(); //赂眉脨脗鹿脻虏脴脢媒脕驴
-	void updateborrownum();//赂眉脨脗陆猫鲁枚脕驴
-	void updatestar();     //赂眉脨脗脨脟录露
-	//脢盲鲁枚脥录脢茅脨脜脧垄
-	void dispbookall();//脣霉脫脨脥录脢茅
-	void dispbook(int n);//脢盲鲁枚脪禄卤戮脢茅
+	void settop(int n);     //设置数量
+	int gettop();           //获取数量
+	void getbookup(int i);  //找到对应图书+1
+	void getbookdown(int i);//找到对应图书-1	
+	int bookstar(int i);//得到对应图书的星级
+	//插入
+	void book_append();//插入一本书
+	void insertall();  //批量插入
+	//删除
+	void deletebookno();   //图书编号删除
+	void deletebookname(); //书名删除
+	void deleteauthor();   //作者删除
+	void deletepublisher();//出版社删除
+	void deletestar();     //星级删除
+	void deleteall();      //删除所有图书信息
+	//查询
+	void searchbookno();         //图书编号查询
+	int searchbookno(string bno);//图书编号查询
+	void searchbookname();       //书名查询
+	void searchauthor();         //作者查询
+	void searchpublisher();      //出版社查询
+	void searchstar();           //图书星级查询
+	//更新
+	void updatebookname(); //更新书名
+	void updateauthor();   //更新作者
+	void updatepublisher();//更新出版社
+	void updatetotalnum(); //更新馆藏数量
+	void updateborrownum();//更新借出量
+	void updatestar();     //更新星级
+	//输出图书信息
+	void dispbookall();//所有图书
+	void dispbook(int n);//输出一本书
 
 	friend ostream& operator<<(ostream& output,Book& b)
 	{
@@ -884,14 +884,14 @@ public:
 	}
 };
 
-//鹿鹿脭矛潞炉脢媒露脕脠毛脥录脢茅脨脜脧垄
+//构造函数读入图书信息
 BookClass::BookClass()
 {
 	top=0;
 	ifstream in("book.txt");
 	if(!in)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	while(!in.eof())
 	{
@@ -901,13 +901,13 @@ BookClass::BookClass()
 	in.close();
 }
 
-//脦枚鹿鹿潞炉脢媒脢盲鲁枚脥录脢茅脨脜脧垄
+//析构函数输出图书信息
 BookClass::~BookClass()
 {
 	ofstream out("book.txt");
 	if(!out)
 	{
-		cout<<"脦脛录镁虏禄脛脺麓貌驴陋!"<<endl;
+		cout<<"文件不能打开!"<<endl;
 	}
 	for(int i=0;i<top;i++)
 	{
@@ -919,19 +919,19 @@ BookClass::~BookClass()
 	out.close();
 }
 
-//脡猫脰脙脢媒脕驴
+//设置数量
 void BookClass::settop(int n)
 {
 	top=n;
 }
 
-//禄帽脠隆脢媒脕驴
+//获取数量
 int BookClass::gettop()
 {
 	return top;
 }
 
-//碌脙碌陆露脭脫娄脥录脢茅碌脛脨脟录露
+//得到对应图书的星级
 int BookClass::bookstar(int i)
 {
 	int k;
@@ -940,50 +940,50 @@ int BookClass::bookstar(int i)
 }
 
 
-//脮脪碌陆露脭脫娄脥录脢茅陆猫鲁枚脕驴+1
+//找到对应图书借出量+1
 void BookClass::getbookup(int i)
 {
 	book[i].upborrownum();
 	book[i].dispbook();
 }
 
-//脮脪碌陆露脭脫娄脥录脢茅陆猫鲁枚脕驴-1
+//找到对应图书借出量-1
 void BookClass::getbookdown(int i)
 {
 	book[i].downborrownum();
 	book[i].dispbook();
 }
 
-//虏氓脠毛脪禄卤戮脢茅
+//插入一本书
 void BookClass::book_append()
 {	
 	int btotalnum,bborrownum,bstar;
 	string bno,bname,bauthor,bpublisher;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要插入书的图书编号:";
 	cin>>bno;
 	book[top].setbookno(bno);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛脢茅脙没:";
+	cout<<"请输入要插入书的书名:";
 	cin>>bname;
 	book[top].setbookname(bname);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛脳梅脮脽:";
+	cout<<"请输入要插入书的作者:";
 	cin>>bauthor;
 	book[top].setauthor(bauthor);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛鲁枚掳忙脡莽:";
+	cout<<"请输入要插入书的出版社:";
 	cin>>bpublisher;
 	book[top].setpublisher(bpublisher);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛鹿脻虏脴脢媒脕驴:";
+	cout<<"请输入要插入书的馆藏数量:";
 	cin>>btotalnum;
 	book[top].settotalnum(btotalnum);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛陆猫鲁枚脕驴:";
+	cout<<"请输入要插入书的借出量:";
 	cin>>bborrownum;
 	book[top].setborrownum(bborrownum);
 	cout<<endl;
-	cout<<"脟毛脢盲脠毛脪陋虏氓脠毛脢茅碌脛脥录脢茅脨脟录露:";
+	cout<<"请输入要插入书的图书星级:";
 	cin>>bstar;
 	book[top].setstar(bstar);
 	cout<<endl;
@@ -991,13 +991,13 @@ void BookClass::book_append()
 	top++;
 }
 
-//脜煤脕驴碌录脠毛
+//批量导入
 void BookClass::insertall()
 {
 	ifstream in("b.txt");
 	if(!in)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	while(!in.eof())
 	{
@@ -1008,12 +1008,12 @@ void BookClass::insertall()
 }
 
 
-//掳麓脥录脢茅卤脿潞脜脡戮鲁媒
+//按图书编号删除
 void BookClass::deletebookno()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脥录脢茅碌脛脧脗卤锚
+	int temp=-1;//要删除的图书的下标
 	string bno;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要删除图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
@@ -1024,19 +1024,19 @@ void BookClass::deletebookno()
 		if(temp!=-1)
 		{
 			book[temp].setbooktag();
-			cout<<"脡戮鲁媒脥锚鲁脡!"<<endl;
+			cout<<"删除完成!"<<endl;
 		}
 	}
 	if(temp==-1)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }
 
-//掳麓脢茅脙没脡戮鲁媒
+//按书名删除
 void BookClass::deletebookname() 
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脥录脢茅碌脛脧脗卤锚
+	int temp=-1;//要删除的图书的下标
 	string bname;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脥录脢茅碌脛脢茅脙没:";
+	cout<<"请输入要删除图书的书名:";
 	cin>>bname;
 	for(int i=0;i<top;i++)
 	{
@@ -1047,19 +1047,19 @@ void BookClass::deletebookname()
 		if(temp!=-1)
 		{
 			book[temp].setbooktag();
-			cout<<"脡戮鲁媒脥锚鲁脡!"<<endl;
+			cout<<"删除完成!"<<endl;
 		}
 	}
 	if(temp==-1)
-		cout<<"脙禄脫脨脮脪碌陆脢茅脙没脦陋"<<bname<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到书名为"<<bname<<"的图书!"<<endl;
 }
 
-//掳麓脳梅脮脽脡戮鲁媒
+//按作者删除
 void BookClass::deleteauthor()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脥录脢茅碌脛脧脗卤锚
+	int temp=-1;//要删除的图书的下标
 	string bauthor;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脥录脢茅碌脛脳梅脮脽:";
+	cout<<"请输入要删除图书的作者:";
 	cin>>bauthor;
 	for(int i=0;i<top;i++)
 	{
@@ -1070,19 +1070,19 @@ void BookClass::deleteauthor()
 		if(temp!=-1)
 		{
 			book[temp].setbooktag();
-			cout<<"脡戮鲁媒脥锚鲁脡!"<<endl;
+			cout<<"删除完成!"<<endl;
 		}
 	}
 	if(temp==-1)
-		cout<<"脙禄脫脨脮脪碌陆脳梅脮脽脦陋"<<bauthor<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到作者为"<<bauthor<<"的图书!"<<endl;
 }   
 
-//掳麓鲁枚掳忙脡莽脡戮鲁媒
+//按出版社删除
 void BookClass::deletepublisher()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脥录脢茅碌脛脧脗卤锚
+	int temp=-1;//要删除的图书的下标
 	string bpublisher;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脥录脢茅碌脛鲁枚掳忙脡莽:";
+	cout<<"请输入要删除图书的出版社:";
 	cin>>bpublisher;
 	for(int i=0;i<top;i++)
 	{
@@ -1093,19 +1093,19 @@ void BookClass::deletepublisher()
 		if(temp!=-1)
 		{
 			book[temp].setbooktag();
-			cout<<"脡戮鲁媒脥锚鲁脡!"<<endl;
+			cout<<"删除完成!"<<endl;
 		}
 	}
 	if(temp==-1)
-		cout<<"脙禄脫脨脮脪碌陆鲁枚掳忙脡莽脦陋"<<bpublisher<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到出版社为"<<bpublisher<<"的图书!"<<endl;
 } 
 
-//掳麓脨脟录露脡戮鲁媒
+//按星级删除
 void BookClass::deletestar()
 {
-	int temp=-1;//脪陋脡戮鲁媒碌脛脥录脢茅碌脛脧脗卤锚
+	int temp=-1;//要删除的图书的下标
 	int bstar;	  
-	cout<<"脟毛脢盲脠毛脪陋脡戮鲁媒脥录脢茅碌脛脨脟录露:";
+	cout<<"请输入要删除图书的星级:";
 	cin>>bstar;
 	for(int i=0;i<top;i++)
 	{
@@ -1116,21 +1116,21 @@ void BookClass::deletestar()
 		if(temp!=-1)
 		{
 			book[temp].setbooktag();
-			cout<<"脡戮鲁媒脥锚鲁脡!"<<endl;
+			cout<<"删除完成!"<<endl;
 		}
 	}
 	if(temp==-1)
 	{
-		cout<<"脙禄脫脨脮脪碌陆脨脟录露脦陋";
+		cout<<"没有找到星级为";
 		for(int j=0;j<bstar;j++)
 		{
-			cout<<"隆卯";
+			cout<<"☆";
 		}
-		cout<<"碌脛脥录脢茅!"<<endl;
+		cout<<"的图书!"<<endl;
 	}
 }
       
-//脡戮鲁媒脣霉脫脨脥录脢茅脨脜脧垄
+//删除所有图书信息
 void BookClass::deleteall()
 {
 	for(int i=0;i<top;i++)
@@ -1139,24 +1139,24 @@ void BookClass::deleteall()
 	}
 }
 	
-//脥录脢茅卤脿潞脜虏茅脩炉
+//图书编号查询
 void BookClass::searchbookno()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要查询书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"Found脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脢茅!"<<endl;
+			cout<<"Found图书编号为"<<bno<<"的书!"<<endl;
 			book[i].dispbook();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的书!"<<endl;
 }
 
 
@@ -1172,107 +1172,107 @@ int BookClass::searchbookno(string bno)
 }
 
 
-//脢茅脙没虏茅脩炉
+//书名查询
 void BookClass::searchbookname()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bname;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脢茅碌脛脢茅脙没:";
+	cout<<"请输入要查询书的书名:";
 	cin>>bname;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookname()==bname)
 		{
 			k=1;
-			cout<<"Found脢茅脙没脦陋"<<bname<<"碌脛脢茅!"<<endl;
+			cout<<"Found书名为"<<bname<<"的书!"<<endl;
 			book[i].dispbook();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脢茅脙没脦陋"<<bname<<"碌脛脢茅!"<<endl;
+		cout<<"没有找到书名为"<<bname<<"的书!"<<endl;
 }
 
-//脳梅脮脽虏茅脩炉
+//作者查询
 void BookClass::searchauthor()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bauthor;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脢茅碌脛脳梅脮脽:";
+	cout<<"请输入要查询书的作者:";
 	cin>>bauthor;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getauthor()==bauthor)
 		{
 			k=1;
-			cout<<"Found脳梅脮脽脦陋"<<bauthor<<"碌脛脢茅!"<<endl;
+			cout<<"Found作者为"<<bauthor<<"的书!"<<endl;
 			book[i].dispbook();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脳梅脮脽脦陋"<<bauthor<<"碌脛脢茅!"<<endl;
+		cout<<"没有找到作者为"<<bauthor<<"的书!"<<endl;
 }
 
-//鲁枚掳忙脡莽虏茅脩炉
+//出版社查询
 void BookClass::searchpublisher()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bpublisher;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脢茅碌脛鲁枚掳忙脡莽:";
+	cout<<"请输入要查询书的出版社:";
 	cin>>bpublisher;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getpublisher()==bpublisher)
 		{
 			k=1;
-			cout<<"Found鲁枚掳忙脡莽脦陋"<<bpublisher<<"碌脛脢茅!"<<endl;
+			cout<<"Found出版社为"<<bpublisher<<"的书!"<<endl;
 			book[i].dispbook();
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆鲁枚掳忙脡莽脦陋"<<bpublisher<<"碌脛脢茅!"<<endl;
+		cout<<"没有找到出版社为"<<bpublisher<<"的书!"<<endl;
 }
 
-//脥录脢茅脨脟录露虏茅脩炉
+//图书星级查询
 void BookClass::searchstar()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	int bstar;
-	cout<<"脟毛脢盲脠毛脪陋虏茅脩炉脢茅碌脛脥录脢茅脨脟录露:";
+	cout<<"请输入要查询书的图书星级:";
 	cin>>bstar;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getstar()==bstar)
 		{
 			k=1;
-			cout<<"Found脥录脢茅脨脟录露脦陋"<<bstar<<"碌脛脢茅!"<<endl;
+			cout<<"Found图书星级为"<<bstar<<"的书!"<<endl;
 			book[i].dispbook();
 		}
 	}
 	if(k==0)
 	{
-		cout<<"脙禄脫脨脮脪碌陆脨脟录露脦陋";
+		cout<<"没有找到星级为";
 		for(int j=0;j<bstar;j++)
 		{
-			cout<<"隆卯";
+			cout<<"☆";
 		}
-		cout<<"碌脛脥录脢茅!"<<endl;
+		cout<<"的图书!"<<endl;
 	}
 }
 
-//赂眉脨脗脢茅脙没
+//更新书名
 void BookClass::updatebookname()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	string bname;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脢茅脙没:";
+			cout<<"请输入要修改的图书的书名:";
 			cin>>bname;
 			book[i].setbookname(bname);
 			book[i].dispbook();
@@ -1280,23 +1280,23 @@ void BookClass::updatebookname()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }
 
-//赂眉脨脗脳梅脮脽
+//更新作者
 void BookClass::updateauthor()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	string bauthor;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脳梅脮脽:";
+			cout<<"请输入要修改的图书的作者:";
 			cin>>bauthor;
 			book[i].setauthor(bauthor);
 			book[i].dispbook();
@@ -1304,23 +1304,23 @@ void BookClass::updateauthor()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }   
 
-//赂眉脨脗鲁枚掳忙脡莽
+//更新出版社
 void BookClass::updatepublisher()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	string bpublisher;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛鲁枚掳忙脡莽:";
+			cout<<"请输入要修改的图书的出版社:";
 			cin>>bpublisher;
 			book[i].setpublisher(bpublisher);
 			book[i].dispbook();
@@ -1328,23 +1328,23 @@ void BookClass::updatepublisher()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }
 
-//赂眉脨脗鹿脻虏脴脢媒脕驴
+//更新馆藏数量
 void BookClass::updatetotalnum()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	int btotalnum;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛鹿脻虏脴脢媒脕驴:";
+			cout<<"请输入要修改的图书的馆藏数量:";
 			cin>>btotalnum;
 			book[i].settotalnum(btotalnum);
 			book[i].dispbook();
@@ -1352,23 +1352,23 @@ void BookClass::updatetotalnum()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }  
   
-//赂眉脨脗陆猫鲁枚脕驴
+//更新借出量
 void BookClass::updateborrownum()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	int bborrownum;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛陆猫鲁枚脕驴:";
+			cout<<"请输入要修改的图书的借出量:";
 			cin>>bborrownum;
 			book[i].setborrownum(bborrownum);
 			book[i].dispbook();
@@ -1376,23 +1376,23 @@ void BookClass::updateborrownum()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }
 
-//赂眉脨脗脨脟录露
+//更新星级
 void BookClass::updatestar()
 {
-	int k=0;  //虏茅脩炉卤锚录脟1:Yes 0:No
+	int k=0;  //查询标记1:Yes 0:No
 	string bno;
 	int bstar;
-	cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要修改的图书的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
 		if(book[i].getbookno()==bno)
 		{
 			k=1;
-			cout<<"脟毛脢盲脠毛脪陋脨脼赂脛碌脛脥录脢茅碌脛脨脟录露:";
+			cout<<"请输入要修改的图书的星级:";
 			cin>>bstar;
 			book[i].setstar(bstar);
 			book[i].dispbook();
@@ -1400,139 +1400,139 @@ void BookClass::updatestar()
 		}
 	}
 	if(k==0)
-		cout<<"脙禄脫脨脮脪碌陆脥录脢茅卤脿潞脜脦陋"<<bno<<"碌脛脥录脢茅!"<<endl;
+		cout<<"没有找到图书编号为"<<bno<<"的图书!"<<endl;
 }    
 
-//脢盲鲁枚脣霉脫脨脥录脢茅脨脜脧垄
+//输出所有图书信息
 void BookClass::dispbookall()
 {
-	cout<<"脥录脢茅脨脜脧垄脠莽脧脗:"<<endl;
-	cout<<"脥录脢茅卤脿潞脜"<<setw(12);
-	cout<<"脢茅脙没"<<setw(12);
-	cout<<"脳梅脮脽"<<setw(12);
-	cout<<"鲁枚掳忙脡莽"<<setw(12);
-	cout<<"鹿脻虏脴脢媒脕驴"<<setw(12);
-	cout<<"陆猫鲁枚脕驴"<<setw(12);
-	cout<<"脥录脢茅脨脟录露"<<endl;
+	cout<<"图书信息如下:"<<endl;
+	cout<<"图书编号"<<setw(12);
+	cout<<"书名"<<setw(12);
+	cout<<"作者"<<setw(12);
+	cout<<"出版社"<<setw(12);
+	cout<<"馆藏数量"<<setw(12);
+	cout<<"借出量"<<setw(12);
+	cout<<"图书星级"<<endl;
 	for(int i=0;i<top;i++)
 	{
 		book[i].dispbook();
 	}
 }
 
-//脢盲鲁枚脪禄卤戮脢茅脨脜脧垄
+//输出一本书信息
 void BookClass::dispbook(int n)
 {
-	cout<<"赂脙脥录脢茅禄霉卤戮脨脜脧垄脠莽脧脗:"<<endl;
+	cout<<"该图书基本信息如下:"<<endl;
 		book[n].dispbook();
 }
 
 
 const int M=5;
 
-//陆猫脭脛脠脮脝脷
+//借阅日期
 class BorrowInfo{
 public: 
-	string bookno;	//脥录脢茅卤脿潞脜
-	int borrowyear; //陆猫脢茅脛锚路脻
-	int borrowmonth;//陆猫脢茅脭脗路脻
-	int borrowday;  //陆猫脢茅脠脮脝脷
-	int backyear;   //禄鹿脢茅脛锚路脻
-	int backmonth;  //禄鹿脢茅脭脗路脻
-	int backday;    //禄鹿脢茅脠脮脝脷
+	string bookno;	//图书编号
+	int borrowyear; //借书年份
+	int borrowmonth;//借书月份
+	int borrowday;  //借书日期
+	int backyear;   //还书年份
+	int backmonth;  //还书月份
+	int backday;    //还书日期
 };
 
-//脪禄赂枚脩搂脡煤陆猫脭脛脨脜脧垄
+//一个学生借阅信息
 class BorrowNote{
 private:
-	string borrowno;//陆猫脭脛脩搂脡煤碌脛脩搂潞脜
+	string borrowno;//借阅学生的学号
 	int top;
 public:
-	BorrowInfo bookborrow[M];//脣霉陆猫脥录脢茅脨脜脧垄
+	BorrowInfo bookborrow[M];//所借图书信息
 	BorrowNote();
 	~BorrowNote();
-	void settop(int);        //脡猫脰脙陆猫脭脛脥录脢茅脢媒脕驴
-	int gettop();            //禄帽脠隆陆猫脭脛脥录脢茅脢媒脕驴
-	void setborrowno(string);   //脡猫脰脙陆猫脭脛脩搂脡煤碌脛脩搂潞脜
-	string getborrowno();       //禄帽脠隆陆猫脭脛脩搂脡煤碌脛脩搂潞脜
-	void setborrowday(int i,int boryear,int bormonth,int borday);//脡猫脰脙陆猫脢茅脢卤录盲
-	void setbackday(int i,int byear,int bmonth,int bday);        //脡猫脰脙禄鹿脢茅脠脮脝脷
-	void borrowbook(string bno);//陆猫脢茅
-	void backbook(string bno);  //禄鹿脢茅
-	void disp();                //脧脭脢戮陆猫脭脛脨脜脧垄
+	void settop(int);        //设置借阅图书数量
+	int gettop();            //获取借阅图书数量
+	void setborrowno(string);   //设置借阅学生的学号
+	string getborrowno();       //获取借阅学生的学号
+	void setborrowday(int i,int boryear,int bormonth,int borday);//设置借书时间
+	void setbackday(int i,int byear,int bmonth,int bday);        //设置还书日期
+	void borrowbook(string bno);//借书
+	void backbook(string bno);  //还书
+	void disp();                //显示借阅信息
 };
 
-//鹿鹿脭矛潞炉脢媒
+//构造函数
 BorrowNote::BorrowNote()
 {
 	top=0;
 }
 
-//脦枚鹿鹿潞炉脢媒
+//析构函数
 BorrowNote::~BorrowNote(){}
 
-//脡猫脰脙陆猫脭脛脥录脢茅脢媒脕驴
+//设置借阅图书数量
 void BorrowNote::settop(int n)
 {
 	top=n;
 }
 
-//禄帽脠隆陆猫脭脛脥录脢茅脢媒脕驴
+//获取借阅图书数量
 int BorrowNote::gettop()
 {
 	return top;
 }
 
-/*//脡猫脰脙陆猫脢茅脛锚路脻
+/*//设置借书年份
 void BorrowNote::setborrowyear(int byear)
 {
 	borrowyear=byear;
 }
 
-//禄帽脠隆陆猫脢茅脛锚路脻
+//获取借书年份
 int BorrowNote::getborrowyear()
 {
     return borrowyear;
 }
 
-//脡猫脰脙陆猫脢茅脭脗路脻
+//设置借书月份
 void BorrowNote::setborrowmonth(int bmonth)
 {
 	borrowmonth=bmonth;
 }
 
-//禄帽脠隆陆猫脢茅脭脗路脻
+//获取借书月份
 int BorrowNote::getborrowmonth()
 {
 	return borrowmonth;    
 }
 
-//脡猫脰脙陆猫脢茅脠脮脝脷
+//设置借书日期
 void BorrowNote::setborrowday(int bday)
 {
 	borrowday=bday;
 }
 
-//禄帽脠隆陆猫脢茅脠脮脝脷
+//获取借书日期
 int BorrowNote::getborrowday()
 {
 	return borrowday;
 }
 */
 
-//脡猫脰脙陆猫脭脛脩搂脡煤碌脛脩搂潞脜
+//设置借阅学生的学号
 void BorrowNote::setborrowno(string borno)
 {
 	borrowno=borno;
 }
 
-//禄帽脠隆陆猫脭脛脩搂脡煤碌脛脩搂潞脜
+//获取借阅学生的学号
 string BorrowNote::getborrowno()
 {
 	return borrowno;
 }
 
-//脡猫脰脙陆猫脢茅脢卤录盲
+//设置借书时间
 void BorrowNote::setborrowday(int i,int boryear,int bormonth,int borday)
 {
 	bookborrow[i].borrowyear=boryear;
@@ -1540,7 +1540,7 @@ void BorrowNote::setborrowday(int i,int boryear,int bormonth,int borday)
 	bookborrow[i].borrowday=borday;
 }
 
-//脡猫脰脙禄鹿脢茅脠脮脝脷
+//设置还书日期
 void BorrowNote::setbackday(int i,int byear,int bmonth,int bday)
 {
 	bookborrow[i].backyear=byear;
@@ -1548,27 +1548,27 @@ void BorrowNote::setbackday(int i,int byear,int bmonth,int bday)
 	bookborrow[i].backday=bday;
 }
 
-//陆猫脢茅
+//借书
 void BorrowNote::borrowbook(string bno)
 {
 	time_t  t;  
     tm  *tp;  
     t=time(NULL);  
     tp=localtime(&t);
-    bookborrow[top].bookno=bno;                 //脥录脢茅卤脿潞脜
-	bookborrow[top].borrowyear=tp->tm_year+1900;//陆猫脢茅脛锚路脻
-	bookborrow[top].borrowmonth=tp->tm_mon+1;   //陆猫脢茅脭脗路脻
-	bookborrow[top].borrowday=tp->tm_mday;      //陆猫脢茅脠脮脝脷
-	bookborrow[top].backyear=0;                 //禄鹿脢茅脛锚路脻
-	bookborrow[top].backmonth=0;                //禄鹿脢茅脭脗路脻
-	bookborrow[top].backday=0;                  //禄鹿脢茅脠脮脝脷
+    bookborrow[top].bookno=bno;                 //图书编号
+	bookborrow[top].borrowyear=tp->tm_year+1900;//借书年份
+	bookborrow[top].borrowmonth=tp->tm_mon+1;   //借书月份
+	bookborrow[top].borrowday=tp->tm_mday;      //借书日期
+	bookborrow[top].backyear=0;                 //还书年份
+	bookborrow[top].backmonth=0;                //还书月份
+	bookborrow[top].backday=0;                  //还书日期
 	top++;
 }
 
-//禄鹿脢茅
+//还书
 void BorrowNote::backbook(string bno)
 {
-	int k=-1;//脥录脢茅脧脗卤锚
+	int k=-1;//图书下标
 	for(int i=0;i<top;i++)
 	{
 		if(bookborrow[i].bookno==bno)
@@ -1577,31 +1577,31 @@ void BorrowNote::backbook(string bno)
 		}
 	}
 	if(k==-1)
-		cout<<"脛煤脦麓陆猫麓脣脢茅!"<<endl;
+		cout<<"您未借此书!"<<endl;
 	else
 	{
 		time_t t;  
 		tm  *tp;  
 		t=time(NULL);  
 		tp=localtime(&t);  
-		bookborrow[k].backyear=tp->tm_year+1900;//禄鹿脢茅脛锚路脻
-		bookborrow[k].backmonth=tp->tm_mon+1;   //禄鹿脢茅脭脗路脻
-		bookborrow[k].backday=tp->tm_mday;      //禄鹿脢茅脠脮脝脷
+		bookborrow[k].backyear=tp->tm_year+1900;//还书年份
+		bookborrow[k].backmonth=tp->tm_mon+1;   //还书月份
+		bookborrow[k].backday=tp->tm_mday;      //还书日期
 	}
 }
 
-//脧脭脢戮陆猫脢茅脨脜脧垄
+//显示借书信息
 void BorrowNote::disp()
 {
-	cout<<"脩搂潞脜脦陋:"<<borrowno<<"碌脛脩搂脡煤碌脛陆猫脢茅脨脜脧垄脠莽脧脗:"<<endl;
+	cout<<"学号为:"<<borrowno<<"的学生的借书信息如下:"<<endl;
 	for(int i=0;i<top;i++)
 	{
-		cout<<"脥录脢茅卤脿潞脜:"<<bookborrow[i].bookno<<endl;
-		cout<<"陆猫脢茅脠脮脝脷:"<<bookborrow[i].borrowyear<<"脛锚"<<bookborrow[i].borrowmonth<<"脭脗"<<bookborrow[i].borrowday<<"脠脮"<<endl;
+		cout<<"图书编号:"<<bookborrow[i].bookno<<endl;
+		cout<<"借书日期:"<<bookborrow[i].borrowyear<<"年"<<bookborrow[i].borrowmonth<<"月"<<bookborrow[i].borrowday<<"日"<<endl;
 		if(bookborrow[i].backyear==0)
-			cout<<"麓脣脢茅脦麓禄鹿!"<<endl;
+			cout<<"此书未还!"<<endl;
 		else
-			cout<<"禄鹿脢茅脠脮脝脷:"<<bookborrow[i].backyear<<"脛锚"<<bookborrow[i].backmonth<<"脭脗"<<bookborrow[i].backday<<"脠脮"<<endl;
+			cout<<"还书日期:"<<bookborrow[i].backyear<<"年"<<bookborrow[i].backmonth<<"月"<<bookborrow[i].backday<<"日"<<endl;
 		cout<<endl;
 	}
 }
@@ -1614,16 +1614,16 @@ private:
 public:
 	BorrowClass();
 	~BorrowClass();
-	void Insert(string borno,string bno);     //虏氓脠毛脪禄赂枚脩搂脡煤陆猫脭脛脨脜脧垄
-	void borrow(Studentclass &S,BookClass &B);//脥录脢茅陆猫脭脛
-	void back(Studentclass &S,BookClass &B);  //脥录脢茅鹿茅禄鹿
-	void recommend(BookClass B);              //脥录脢茅脥脝录枚
-	//陆猫脭脛脨脜脧垄虏茅脩炉
-	void notesearchno();    //掳麓脩搂潞脜虏茅脩炉陆猫脢茅录脟脗录
-	void notesearchbookno();//掳麓脥录脢茅卤脿潞脜虏茅脩炉陆猫脢茅录脟脗录
-	void notesearchname();  //掳麓脢茅脙没虏茅脩炉陆猫脢茅录脟脗录
-	void notesearchdate();  //掳麓陆猫脢茅脠脮脝脷虏茅脩炉陆猫脢茅录脟脗录
-	void dispall();         //脧脭脢戮脣霉脫脨陆猫脢茅录脟脗录  
+	void Insert(string borno,string bno);     //插入一个学生借阅信息
+	void borrow(Studentclass &S,BookClass &B);//图书借阅
+	void back(Studentclass &S,BookClass &B);  //图书归还
+	void recommend(BookClass B);              //图书推荐
+	//借阅信息查询
+	void notesearchno();    //按学号查询借书记录
+	void notesearchbookno();//按图书编号查询借书记录
+	void notesearchname();  //按书名查询借书记录
+	void notesearchdate();  //按借书日期查询借书记录
+	void dispall();         //显示所有借书记录  
 
 	friend ostream& operator<<(ostream& output,BorrowNote& D)
 	{
@@ -1666,14 +1666,14 @@ public:
 	}
 };
 
-//鹿鹿脭矛潞炉脢媒露脕脠隆陆猫脭脛脨脜脧垄
+//构造函数读取借阅信息
 BorrowClass::BorrowClass()
 {
 	top=0;
 	ifstream in("borrow.txt");
 	if(!in)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	while(!in.eof())
 	{
@@ -1683,13 +1683,13 @@ BorrowClass::BorrowClass()
 	in.close();
 }
 
-//脦枚鹿鹿潞炉脢媒脢盲鲁枚陆猫脭脛脨脜脧垄
+//析构函数输出借阅信息
 BorrowClass::~BorrowClass()
 {
 	ofstream out("borrow.txt");
 	if(!out)
 	{
-		cout<<"脦脛录镁麓貌虏禄驴陋!"<<endl;
+		cout<<"文件打不开!"<<endl;
 	}
 	for(int i=0;i<top;i++)
 	{
@@ -1698,7 +1698,7 @@ BorrowClass::~BorrowClass()
 	out.close();
 }
 
-//虏氓脠毛脪禄赂枚脩搂脡煤陆猫脭脛脨脜脧垄
+//插入一个学生借阅信息
 void BorrowClass::Insert(string borno,string bno)
 {
 	note[top].setborrowno(borno);
@@ -1706,25 +1706,25 @@ void BorrowClass::Insert(string borno,string bno)
 	top++;
 }
 
-//脥录脢茅陆猫脭脛
+//图书借阅
 void BorrowClass::borrow(Studentclass &S,BookClass &B)
 {
 	string borno;
 	string bno;
-	cout<<"脟毛脢盲脠毛脛煤碌脛脩搂潞脜:";
+	cout<<"请输入您的学号:";
 	cin>>borno;
 	int k1=S.searchno(borno);
 	if(k1==-1)
 	{
-		cout<<"脙禄脫脨脩搂潞脜脦陋:"<<borno<<"碌脛脩搂脡煤"<<endl<<endl;
+		cout<<"没有学号为:"<<borno<<"的学生"<<endl<<endl;
 		return;
 	}
-	cout<<"脟毛脢盲脠毛脪陋陆猫脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要借书的图书编号:";
 	cin>>bno;
 	int k2=B.searchbookno(bno);
 	if(k2==-1)
 	{
-		cout<<"脙禄脫脨脥录脢茅卤脿潞脜脦陋:"<<bno<<"碌脛脢茅"<<endl<<endl;
+		cout<<"没有图书编号为:"<<bno<<"的书"<<endl<<endl;
 		return;
 	}
 	int s=-1;
@@ -1737,7 +1737,7 @@ void BorrowClass::borrow(Studentclass &S,BookClass &B)
 			note[i].borrowbook(bno);
 			k=B.searchbookno(bno);
 			B.getbookup(k);
-			cout<<borno<<"陆猫脭脛"<<bno<<"鲁脡鹿娄!"<<endl<<endl;
+			cout<<borno<<"借阅"<<bno<<"成功!"<<endl<<endl;
 		    break;
 		}
 	}
@@ -1746,30 +1746,30 @@ void BorrowClass::borrow(Studentclass &S,BookClass &B)
 		Insert(borno,bno);
 		k=B.searchbookno(bno);
 		B.getbookup(k);
-		cout<<borno<<"陆猫脭脛"<<bno<<"鲁脡鹿娄!"<<endl<<endl;
+		cout<<borno<<"借阅"<<bno<<"成功!"<<endl<<endl;
 	}
 }
 
 
-//脥录脢茅鹿茅禄鹿
+//图书归还
 void BorrowClass::back(Studentclass &S,BookClass &B)
 {
 	string borno;
 	string bno;
-	cout<<"脟毛脢盲脠毛脛煤碌脛脩搂潞脜:";
+	cout<<"请输入您的学号:";
 	cin>>borno;
 	int k1=S.searchno(borno);
 	if(k1==-1)
 	{
-		cout<<"脙禄脫脨脩搂潞脜脦陋:"<<borno<<"碌脛脩搂脡煤"<<endl<<endl;
+		cout<<"没有学号为:"<<borno<<"的学生"<<endl<<endl;
 		return;
 	}
-	cout<<"脟毛脢盲脠毛脪陋陆猫脢茅碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入要借书的图书编号:";
 	cin>>bno;
 	int k2=B.searchbookno(bno);
 	if(k2==-1)
 	{
-		cout<<"脙禄脫脨脥录脢茅卤脿潞脜脦陋:"<<bno<<"碌脛脢茅"<<endl<<endl;
+		cout<<"没有图书编号为:"<<bno<<"的书"<<endl<<endl;
 		return;
 	}
 	int k=-1;
@@ -1780,12 +1780,12 @@ void BorrowClass::back(Studentclass &S,BookClass &B)
 			note[i].backbook(bno);
 			k=B.searchbookno(bno);
 		    B.getbookdown(k);
-			cout<<borno<<"禄鹿脢茅"<<bno<<"鲁脡鹿娄!"<<endl<<endl;
+			cout<<borno<<"还书"<<bno<<"成功!"<<endl<<endl;
 		}
 	}
 }
 
-//脥录脢茅脥脝录枚
+//图书推荐
 void BorrowClass::recommend(BookClass B)
 {
 	int s;
@@ -1832,12 +1832,12 @@ void BorrowClass::recommend(BookClass B)
 }
 
 
-//掳麓脩搂潞脜虏茅脩炉陆猫脢茅录脟脗录
+//按学号查询借书记录
 void BorrowClass::notesearchno()
 {
 	int k=-1;
 	string borno;
-	cout<<"脟毛脢盲脠毛脛煤碌脛脩搂潞脜:";
+	cout<<"请输入您的学号:";
 	cin>>borno;
 	for(int i=0;i<top;i++)
 	{
@@ -1849,16 +1849,16 @@ void BorrowClass::notesearchno()
 	}
 	if(k==-1)
 	{
-		cout<<"脩搂潞脜脦陋:"<<borno<<"碌脛脩搂脡煤脙禄脫脨陆猫脢茅!"<<endl<<endl;
+		cout<<"学号为:"<<borno<<"的学生没有借书!"<<endl<<endl;
 	}
 }
 
-/*//掳麓脥录脢茅卤脿潞脜虏茅脩炉陆猫脢茅录脟脗录
+/*//按图书编号查询借书记录
 void BorrowClass::notesearchbookno()
 {
 	int k=-1;
 	string bno;
-	cout<<"脟毛脢盲脠毛脛煤脪陋虏茅脩炉碌脛脥录脢茅卤脿潞脜:";
+	cout<<"请输入您要查询的图书编号:";
 	cin>>bno;
 	for(int i=0;i<top;i++)
 	{
@@ -1873,16 +1873,16 @@ void BorrowClass::notesearchbookno()
 	}
 	if(k==-1)
 	{
-		cout<<"脥录脢茅卤脿潞脜脦陋:"<<bno<<"碌脛脥录脢茅脦麓卤禄陆猫鲁枚!"<<endl;
+		cout<<"图书编号为:"<<bno<<"的图书未被借出!"<<endl;
 	}
 }
 
-//掳麓脢茅脙没虏茅脩炉陆猫脢茅录脟脗录
+//按书名查询借书记录
 void BorrowClass::notesearchname()
 {
 	int k=-1;
 	string bname;
-	cout<<"脟毛脢盲脠毛脛煤脪陋虏茅脩炉碌脛脢茅脙没:";
+	cout<<"请输入您要查询的书名:";
 	cin>>bname;
 	for(int i=0;i<top;i++)
 	{
@@ -1897,23 +1897,23 @@ void BorrowClass::notesearchname()
 	}
 	if(k==-1)
 	{
-		cout<<"脢茅脙没脦陋:"<<bname<<"碌脛脥录脢茅脦麓卤禄陆猫鲁枚!"<<endl;
+		cout<<"书名为:"<<bname<<"的图书未被借出!"<<endl;
 	}
 }
 
-//掳麓陆猫脢茅脠脮脝脷虏茅脩炉陆猫脢茅录脟脗录
+//按借书日期查询借书记录
 void BorrowClass::notesearchdate()
 {
 	int k=-1;
 	int byear;
 	int bmonth;
 	int bday;
-	cout<<"脟毛脢盲脠毛脛煤脪陋虏茅脩炉碌脛陆猫脢茅脠脮脝脷:"<<endl;
-	cout<<"脟毛脢盲脠毛脛锚路脻:";
+	cout<<"请输入您要查询的借书日期:"<<endl;
+	cout<<"请输入年份:";
 	cin>>byear;
-	cout<<endl<<"脟毛脢盲脠毛脛锚路脻:";
+	cout<<endl<<"请输入年份:";
 	cin>>bmonth;
-	cout<<endl<<"脟毛脢盲脠毛脠脮脝脷:";
+	cout<<endl<<"请输入日期:";
 	cin>>bday;
 	for(int i=0;i<top;i++)
 	{
@@ -1928,13 +1928,13 @@ void BorrowClass::notesearchdate()
 	}
 	if(k==-1)
 	{
-		cout<<byear<<"脛锚"<<bmonth<<"脭脗"<<bday<<"脠脮"<<"脙禄脫脨脠脣陆猫脢茅!"<<endl;
+		cout<<byear<<"年"<<bmonth<<"月"<<bday<<"日"<<"没有人借书!"<<endl;
 	}
 }
 */	
 
 
-//脧脭脢戮脣霉脫脨陆猫脢茅录脟脗录
+//显示所有借书记录
 void BorrowClass::dispall()
 {
 	for(int i=0;i<top;i++)
@@ -1943,18 +1943,18 @@ void BorrowClass::dispall()
 
 
 
-//脳脫虏脣碌楼
-//碌楼赂枚脩搂脡煤卤脧脪碌
+//子菜单
+//单个学生毕业
 void stu_detete_menu(Studentclass &S)
 {
 	int choise;
-	cout<<"1.掳麓脩搂潞脜脡戮鲁媒"<<endl<<endl;
-	cout<<"2.掳麓脨脮脙没脡戮鲁媒"<<endl<<endl;
-	cout<<"3.掳麓脳篓脪碌脡戮鲁媒"<<endl<<endl;
-	cout<<"4.掳麓掳脿录露脡戮鲁媒"<<endl<<endl;
-	cout<<"5.掳麓脢脰禄煤潞脜脡戮鲁媒"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--5):";
+	cout<<"1.按学号删除"<<endl<<endl;
+	cout<<"2.按姓名删除"<<endl<<endl;
+	cout<<"3.按专业删除"<<endl<<endl;
+	cout<<"4.按班级删除"<<endl<<endl;
+	cout<<"5.按手机号删除"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--5):";
 	cin>>choise;
 	switch(choise)
 	{
@@ -1976,22 +1976,22 @@ void stu_detete_menu(Studentclass &S)
 	case 0:
 		return;
 	default:
-		cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+		cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
-//脳脫虏脣碌楼
-//脩搂脡煤脨脜脧垄虏茅脩炉
+//子菜单
+//学生信息查询
 void stu_search_menu(Studentclass &S)
 {
 	int choise;
-	cout<<"1.虏茅脩炉脩搂潞脜"<<endl<<endl;
-	cout<<"2.虏茅脩炉脨脮脙没"<<endl<<endl;
-	cout<<"3.虏茅脩炉脳篓脪碌"<<endl<<endl;
-	cout<<"4.虏茅脩炉掳脿录露"<<endl<<endl;
-	cout<<"5.虏茅脩炉脢脰禄煤潞脜"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--5):";
+	cout<<"1.查询学号"<<endl<<endl;
+	cout<<"2.查询姓名"<<endl<<endl;
+	cout<<"3.查询专业"<<endl<<endl;
+	cout<<"4.查询班级"<<endl<<endl;
+	cout<<"5.查询手机号"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--5):";
 	cin>>choise;
 	switch(choise)
 	{
@@ -2013,21 +2013,21 @@ void stu_search_menu(Studentclass &S)
 	case 0:
 		return;
 	default:
-		cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+		cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
-//脳脫虏脣碌楼
-//脩搂脡煤脨脜脧垄脨脼赂脛
+//子菜单
+//学生信息修改
 void stu_update_menu(Studentclass &S)
 {
 	int choise;
-	cout<<"1.赂眉脨脗脨脮脙没"<<endl<<endl;
-	cout<<"2.赂眉脨脗脳篓脪碌"<<endl<<endl;
-	cout<<"3.赂眉脨脗掳脿录露"<<endl<<endl;
-	cout<<"4.赂眉脨脗脢脰禄煤潞脜"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--4):";
+	cout<<"1.更新姓名"<<endl<<endl;
+	cout<<"2.更新专业"<<endl<<endl;
+	cout<<"3.更新班级"<<endl<<endl;
+	cout<<"4.更新手机号"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--4):";
 	cin>>choise;
 	switch(choise)
 	{
@@ -2046,23 +2046,23 @@ void stu_update_menu(Studentclass &S)
 	case 0:
 		return;
 	default:
-		cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+		cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
 void stu_main_menu(Studentclass &S)
 {
 	int choise;
-	cout<<setw(6)<<"隆卯隆卯隆卯  禄露脫颅脢鹿脫脙脩搂脡煤脨脜脧垄鹿脺脌铆脧碌脥鲁  隆卯隆卯隆卯"<<endl<<endl;
-	cout<<"       1.碌楼赂枚脩搂脡煤脠毛脩搂"<<endl<<endl;
-	cout<<"       2.碌楼赂枚脩搂脡煤卤脧脪碌"<<endl<<endl;
-	cout<<"       3.脜煤脕驴脩搂脡煤碌录脠毛"<<endl<<endl;
-	cout<<"       4.脜煤脕驴脩搂脡煤脡戮鲁媒"<<endl<<endl;
-	cout<<"       5.脩搂脡煤脨脜脧垄虏茅脩炉"<<endl<<endl;
-	cout<<"       6.脩搂脡煤脨脜脧垄脨脼赂脛"<<endl<<endl;
-	cout<<"       7.脧脭脢戮脣霉脫脨脩搂脡煤脨脜脧垄"<<endl<<endl;
-	cout<<"       0.脥脣鲁枚脧碌脥鲁"<<endl<<endl;
-	cout<<"       脟毛脢盲脠毛(0--7):";
+	cout<<setw(6)<<"☆☆☆  欢迎使用学生信息管理系统  ☆☆☆"<<endl<<endl;
+	cout<<"       1.单个学生入学"<<endl<<endl;
+	cout<<"       2.单个学生毕业"<<endl<<endl;
+	cout<<"       3.批量学生导入"<<endl<<endl;
+	cout<<"       4.批量学生删除"<<endl<<endl;
+	cout<<"       5.学生信息查询"<<endl<<endl;
+	cout<<"       6.学生信息修改"<<endl<<endl;
+	cout<<"       7.显示所有学生信息"<<endl<<endl;
+	cout<<"       0.退出系统"<<endl<<endl;
+	cout<<"       请输入(0--7):";
 	cin>>choise;
     switch(choise)
 	{
@@ -2089,22 +2089,22 @@ void stu_main_menu(Studentclass &S)
 		case 0:
 			return;
 		default:
-			cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+			cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
-//脳脫虏脣碌楼
-//碌楼卤戮脥录脢茅脡戮鲁媒
+//子菜单
+//单本图书删除
 void book_delete_menu(BookClass &B)
 {
 	int choise;
-	cout<<"1.掳麓脥录脢茅卤脿潞脜脡戮鲁媒"<<endl<<endl;
-	cout<<"2.掳麓脢茅脙没脡戮鲁媒"<<endl<<endl;
-	cout<<"3.掳麓脳梅脮脽脡戮鲁媒"<<endl<<endl;
-	cout<<"4.掳麓鲁枚掳忙脡莽脡戮鲁媒"<<endl<<endl;
-	cout<<"5.掳麓脨脟录露脡戮鲁媒"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--5):";
+	cout<<"1.按图书编号删除"<<endl<<endl;
+	cout<<"2.按书名删除"<<endl<<endl;
+	cout<<"3.按作者删除"<<endl<<endl;
+	cout<<"4.按出版社删除"<<endl<<endl;
+	cout<<"5.按星级删除"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--5):";
 	cin>>choise;
 	switch(choise)
 	{
@@ -2126,22 +2126,22 @@ void book_delete_menu(BookClass &B)
 	case 0:
 		return;
 	default:
-			cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+			cout<<"输入错误,请重新输入!"<<endl;
 	}
 }	
 
-//脳脫虏脣碌楼
-//脥录脢茅脨脜脧垄虏茅脩炉
+//子菜单
+//图书信息查询
 void book_search_menu(BookClass &B)
 {
 	int choise;
-	cout<<"1.掳麓脥录脢茅卤脿潞脜虏茅脩炉"<<endl<<endl;
-	cout<<"2.掳麓脢茅脙没虏茅脩炉"<<endl<<endl;
-	cout<<"3.掳麓脳梅脮脽虏茅脩炉"<<endl<<endl;
-	cout<<"4.掳麓鲁枚掳忙脡莽虏茅脩炉"<<endl<<endl;
-	cout<<"5.掳麓脨脟录露虏茅脩炉"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--5):";
+	cout<<"1.按图书编号查询"<<endl<<endl;
+	cout<<"2.按书名查询"<<endl<<endl;
+	cout<<"3.按作者查询"<<endl<<endl;
+	cout<<"4.按出版社查询"<<endl<<endl;
+	cout<<"5.按星级查询"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--5):";
 	cin>>choise;
 	switch(choise)
 	{
@@ -2163,23 +2163,23 @@ void book_search_menu(BookClass &B)
 	case 0:
 		return;
 	default:
-			cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+			cout<<"输入错误,请重新输入!"<<endl;
 	}
 }	
 
-//脳脫虏脣碌楼
-//赂眉脨脗脥录脢茅脨脜脧垄
+//子菜单
+//更新图书信息
 void book_update_menu(BookClass &B)
 {
 	int choise;
-	cout<<"1.赂眉脨脗脢茅脙没"<<endl<<endl;
-	cout<<"2.赂眉脨脗脳梅脮脽"<<endl<<endl;
-	cout<<"3.赂眉脨脗鲁枚掳忙脡莽"<<endl<<endl;
-	cout<<"4.赂眉脨脗鹿脻虏脴脢媒脕驴"<<endl<<endl;
-	cout<<"5.赂眉脨脗陆猫鲁枚脕驴"<<endl<<endl;
-	cout<<"6.赂眉脨脗脨脟录露"<<endl<<endl;
-	cout<<"0.脥脣鲁枚"<<endl<<endl;
-	cout<<"脟毛脢盲脠毛(0--6):";
+	cout<<"1.更新书名"<<endl<<endl;
+	cout<<"2.更新作者"<<endl<<endl;
+	cout<<"3.更新出版社"<<endl<<endl;
+	cout<<"4.更新馆藏数量"<<endl<<endl;
+	cout<<"5.更新借出量"<<endl<<endl;
+	cout<<"6.更新星级"<<endl<<endl;
+	cout<<"0.退出"<<endl<<endl;
+	cout<<"请输入(0--6):";
 	cin>>choise;
 	system("cls");
 	switch(choise)
@@ -2205,23 +2205,23 @@ void book_update_menu(BookClass &B)
 	case 0:
 		return;
 	default:
-			cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+			cout<<"输入错误,请重新输入!"<<endl;
 	}
 }	
 
 void book_main_menu(BookClass &B)
 {
 	int choise;
-	cout<<"隆卯隆卯隆卯  禄露脫颅脢鹿脫脙脥录脢茅鹿脺脌铆脧碌脥鲁  隆卯隆卯隆卯"<<endl<<endl;
-	cout<<"       1.碌楼卤戮脥录脢茅虏氓脠毛"<<endl<<endl;
-	cout<<"       2.脜煤脕驴脥录脢茅虏氓脠毛"<<endl<<endl;
-	cout<<"       3.碌楼卤戮脥录脢茅脡戮鲁媒"<<endl<<endl;
-	cout<<"       4.脜煤脕驴脥录脢茅脡戮鲁媒"<<endl<<endl;
-	cout<<"       5.脥录脢茅脨脜脧垄虏茅脩炉"<<endl<<endl;
-	cout<<"       6.赂眉脨脗脥录脢茅脨脜脧垄"<<endl<<endl;
-	cout<<"       7.脢盲鲁枚脣霉脫脨脥录脢茅脨脜脧垄"<<endl<<endl;
-	cout<<"       0.脥脣鲁枚"<<endl<<endl;
-	cout<<"       脟毛脢盲脠毛(0--7):";
+	cout<<"☆☆☆  欢迎使用图书管理系统  ☆☆☆"<<endl<<endl;
+	cout<<"       1.单本图书插入"<<endl<<endl;
+	cout<<"       2.批量图书插入"<<endl<<endl;
+	cout<<"       3.单本图书删除"<<endl<<endl;
+	cout<<"       4.批量图书删除"<<endl<<endl;
+	cout<<"       5.图书信息查询"<<endl<<endl;
+	cout<<"       6.更新图书信息"<<endl<<endl;
+	cout<<"       7.输出所有图书信息"<<endl<<endl;
+	cout<<"       0.退出"<<endl<<endl;
+	cout<<"       请输入(0--7):";
 	cin>>choise;
 	system("cls");
 	switch(choise)
@@ -2250,7 +2250,7 @@ void book_main_menu(BookClass &B)
 	case 0:
 		return;
 	default:
-		cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+		cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
@@ -2258,14 +2258,14 @@ void book_main_menu(BookClass &B)
 void borrow_note_menu(Studentclass &S,BookClass &B,BorrowClass &N)
 {
 	int choise;
-	cout<<"隆卯隆卯隆卯  禄露脫颅脢鹿脫脙露脕脮脽陆猫脭脛鹿脺脌铆脧碌脥鲁  隆卯隆卯隆卯"<<endl<<endl;
-	cout<<"       1.脥录脢茅陆猫脭脛"<<endl<<endl;
-	cout<<"       2.脥录脢茅鹿茅禄鹿"<<endl<<endl;
-	cout<<"       3.虏茅脩炉陆猫脢茅录脟脗录"<<endl<<endl;
-	cout<<"       4.脥脝录枚脥录脢茅"<<endl<<endl;
-	cout<<"       5.脧脭脢戮脣霉脫脨陆猫脢茅录脟脗录"<<endl<<endl;
-	cout<<"       0.脥脣鲁枚"<<endl<<endl;
-	cout<<"       脟毛脢盲脠毛(0--5):";
+	cout<<"☆☆☆  欢迎使用读者借阅管理系统  ☆☆☆"<<endl<<endl;
+	cout<<"       1.图书借阅"<<endl<<endl;
+	cout<<"       2.图书归还"<<endl<<endl;
+	cout<<"       3.查询借书记录"<<endl<<endl;
+	cout<<"       4.推荐图书"<<endl<<endl;
+	cout<<"       5.显示所有借书记录"<<endl<<endl;
+	cout<<"       0.退出"<<endl<<endl;
+	cout<<"       请输入(0--5):";
 	cin>>choise;
 	system("cls");
 	switch(choise)
@@ -2288,7 +2288,7 @@ void borrow_note_menu(Studentclass &S,BookClass &B,BorrowClass &N)
 	case 0:
 		return;
 	default:
-		cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+		cout<<"输入错误,请重新输入!"<<endl;
 	}
 }
 
@@ -2299,21 +2299,21 @@ int main()
 	int flag=111;
 begin:
 	cout<<endl<<endl<<endl<<endl<<endl<<endl;
-	cout<<setw(40)<<"脟毛脢盲脠毛脛煤碌脛脡铆路脻:";
+	cout<<setw(40)<<"请输入您的身份:";
 	{
 		cin>>a;
 		if(a=="111")
 		{
-			cout<<setw(38)<<"脟毛脢盲脠毛脙脺脗毛:";
+			cout<<setw(38)<<"请输入密码:";
 			cin>>pw;
 			if(pw=="000")
 			{
-				cout<<"碌脟脗陆鲁脡鹿娄!"<<endl;
+				cout<<"登陆成功!"<<endl;
 				system("cls");
 			}
 			else
 			{
-				cout<<"脙脺脗毛麓铆脦贸!脟毛脰脴脨脗脢盲脠毛!"<<endl;
+				cout<<"密码错误!请重新输入!"<<endl;
 				goto begin;
 			}
 		}
@@ -2324,12 +2324,12 @@ begin:
 	BorrowClass N;
 	for(;;)
 	{
-		cout<<setw(6)<<" 隆卯隆卯隆卯隆卯  禄露脫颅脢鹿脫脙脥录脢茅鹿脺脌铆脧碌脥鲁  隆卯隆卯隆卯隆卯"<<endl<<endl;
-		cout<<"          1.脩搂脡煤脨脜脧垄鹿脺脌铆脧碌脥鲁"<<endl<<endl;
-		cout<<"          2.脥录脢茅鹿脺脌铆脧碌脥鲁"<<endl<<endl;
-		cout<<"          3.露脕脮脽陆猫脭脛鹿脺脌铆脧碌脥鲁"<<endl<<endl;
-		cout<<"          0.脥脣鲁枚脧碌脥鲁"<<endl<<endl;
-		cout<<"          脟毛脩隆脭帽(0--3):";
+		cout<<setw(6)<<" ☆☆☆☆  欢迎使用图书管理系统  ☆☆☆☆"<<endl<<endl;
+		cout<<"          1.学生信息管理系统"<<endl<<endl;
+		cout<<"          2.图书管理系统"<<endl<<endl;
+		cout<<"          3.读者借阅管理系统"<<endl<<endl;
+		cout<<"          0.退出系统"<<endl<<endl;
+		cout<<"          请选择(0--3):";
 		cin>>choise;
 		system("cls");
 		switch(choise)
@@ -2345,10 +2345,10 @@ begin:
 			break;
 		case 0:
 			cout<<endl;
-			cout<<"禄露脫颅脢鹿脫脙脥录脢茅鹿脺脌铆脧碌脥鲁,脟毛脤谩鲁枚卤娄鹿贸脪芒录没!"<<endl;
+			cout<<"欢迎使用图书管理系统,请提出宝贵意见!"<<endl;
 			return 0;
 		default:
-			cout<<"脢盲脠毛麓铆脦贸,脟毛脰脴脨脗脢盲脠毛!"<<endl;
+			cout<<"输入错误,请重新输入!"<<endl;
 		}
 	}
 	return 0;
