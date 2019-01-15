@@ -28,7 +28,7 @@ class Student
 	string getclass();		//get student class
 	void setclass(string);  //set student class
 	string getmobile();		//get student phone number
-	void setmobile(string); //set student 
+	void setmobile(string); //set student
 	void disp();			//display student info
 	~Student();
 };
@@ -41,7 +41,6 @@ Student::Student()
 
 //Destructor
 Student::~Student() {}
-
 
 //get tag
 int Student::gettag()
