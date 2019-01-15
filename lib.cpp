@@ -5,116 +5,117 @@
 #include <time.h>
 using namespace std;
 
-//Student类
+//Student Class
 class Student
 {
   private:
-	int tag;			  //删除标记1:已删0:未删
-	string studentno;	 //学号
-	string studentname;   //姓名
-	string studentmajor;  //专业
-	string studentclass;  //班级
-	string studentmobile; //手机
+	int tag;			  //delete tag 1:delete; 0: no delete
+	string studentno;	 //student number
+	string studentname;   //student name
+	string studentmajor;  //student major
+	string studentclass;  //student class
+	string studentmobile; //phone number
   public:
 	Student();
-	int gettag();			//获取删除标记
-	void settag();			//设置删除标记
-	string getno();			//获取学号
-	void setno(string);		//设置学号
-	string getname();		//获取姓名
-	void setname(string);   //设置姓名
-	string getmajor();		//获取专业
-	void setmajor(string);  //设置专业
-	string getclass();		//获取班级
-	void setclass(string);  //设置班级
-	string getmobile();		//获取手机号
-	void setmobile(string); //设置手机号
-	void disp();			//输出学生信息
+	int gettag();			//get tag
+	void settag();			//set tag
+	string getno();			//get student number
+	void setno(string);		//set student number
+	string getname();		//get student name
+	void setname(string);   //set student name
+	string getmajor();		//get student major
+	void setmajor(string);  //set student major
+	string getclass();		//get student class
+	void setclass(string);  //set student class
+	string getmobile();		//get student phone number
+	void setmobile(string); //set student 
+	void disp();			//display student info
 	~Student();
 };
 
-//缺省构造函数
+//the default constructor
 Student::Student()
 {
 	tag = 0;
 }
 
-//析构函数
+//Destructor
 Student::~Student() {}
 
-//获取删除标记
+
+//get tag
 int Student::gettag()
 {
 	return tag;
 }
 
-//设置删除标记
+//set tag
 void Student::settag()
 {
 	tag = 1;
 }
 
-//获取学号
+//get student number
 string Student::getno()
 {
 	return studentno;
 }
 
-//设置学号
+//set student number
 void Student::setno(string sno)
 {
 	studentno = sno;
 }
 
-//获取姓名
+//get student name
 string Student::getname()
 {
 	return studentname;
 }
 
-//设置姓名
+//set student name
 void Student::setname(string sname)
 {
 	studentname = sname;
 }
 
-//获取专业
+//get student major
 string Student::getmajor()
 {
 	return studentmajor;
 }
 
-//设置专业
+//set student major
 void Student::setmajor(string smajor)
 {
 	studentmajor = smajor;
 }
 
-//获取班级
+//get student class
 string Student::getclass()
 {
 	return studentclass;
 }
 
-//设置班级
+//set student class
 void Student::setclass(string sclass)
 {
 	studentclass = sclass;
 }
 
-//获取手机号
+//get student phone number
 string Student::getmobile()
 {
 	return studentmobile;
 }
 
-//设置手机号
+//set student phone number
 void Student::setmobile(string smobile)
 {
 	studentmobile = smobile;
 }
 
-//输出学生信息
+//display student info
 void Student::disp()
 {
 	if (!tag)
@@ -128,39 +129,38 @@ class Studentclass
 {
   private:
 	int top;
-	Student stu[Max]; //学生记录
+	Student stu[Max]; //Student record
   public:
 	Studentclass();
 	~Studentclass();
-	void settop(int n); //设置人数
-	int gettop();		//获取人数
+	void settop(int n); //set student number
+	int gettop();		//get student number
 
-	//插入
-	void stu_append();   //插入一个学生
-						 //删除一个学生
-	void deleteno();	 //学号删除
-	void deletename();   //姓名删除
-	void deletemajor();  //专业删除
-	void deleteclass();  //班级删除
-	void deletemobile(); //手机号删除
-	void deleteall();	//删除所有学生信息
+	//add
+	void stu_append();   //add a student
+	void deleteno();	 //according to student number delete
+	void deletename();   //according to student name delete
+	void deletemajor();  //according to student major delete
+	void deleteclass();  //according to student class delete
+	void deletemobile(); //according to phone number delete
+	void deleteall();	//delete all student infos
 
-	void insertall(); //批量导入
-	//查询
-	void searchno();		  //学号查询
-	int searchno(string sno); //学号查询
-	void searchname();		  //姓名查询
-	void searchmajor();		  //专业查询
-	void searchclass();		  //班级查询
-	void searchmobile();	  //手机号查询
-	//更新
-	void updatename();   //更新姓名
-	void updatemajor();  //更新专业
-	void updateclass();  //更新班级
-	void updatemobile(); //更新手机号
-	//输出学生信息
-	void dispall();   //所有学生
-	void disp(int n); //一个学生
+	void insertall(); //add many students
+	//search
+	void searchno();		  //according to student number search
+	int searchno(string sno); //according to student number search
+	void searchname();		  //according to student name search
+	void searchmajor();		  //according to student major search
+	void searchclass();		  //according to student class search
+	void searchmobile();	  //according to phone number search
+	//update
+	void updatename();   //update name
+	void updatemajor();  //update major
+	void updateclass();  //update class
+	void updatemobile(); //update phone number
+	//display student info
+	void dispall();   //all student
+	void disp(int n); //a student
 
 	friend ostream &operator<<(ostream &output, Student &s)
 	{
@@ -186,7 +186,7 @@ class Studentclass
 	}
 };
 
-//构造函数读入学生信息
+//the default constructor of read student info
 Studentclass::Studentclass()
 {
 	top = 0;
@@ -195,7 +195,7 @@ Studentclass::Studentclass()
 	{
 		cout << "文件打不开!" << endl;
 	}
-	while (!in.eof()) //eof返回标志是否到了文件末尾
+	while (!in.eof()) //eof return if get to the end of file
 	{
 		in >> stu[top];
 		top++;
@@ -203,7 +203,7 @@ Studentclass::Studentclass()
 	in.close();
 }
 
-//析构函数输出学生信息
+//destructor display student info
 Studentclass::~Studentclass()
 {
 	ofstream out("student.txt");
@@ -221,54 +221,54 @@ Studentclass::~Studentclass()
 	out.close();
 }
 
-//设置人数
+//set student number
 void Studentclass::settop(int n)
 {
 	top = n;
 }
 
-//获取人数
+//get student number
 int Studentclass::gettop()
 {
 	return top;
 }
 
-//插入一个学生
+//insert a student
 void Studentclass::stu_append()
 {
 	string sno, sname, smajor, sclass, smobile;
-	cout << "请输入要插入学生的学号:";
+	cout << "please input the student number:";
 	cin >> sno;
 	stu[top].setno(sno);
 	cout << endl;
-	cout << "请输入要插入学生的姓名:";
+	cout << "please input the student name:";
 	cin >> sname;
 	stu[top].setname(sname);
 	cout << endl;
-	cout << "请输入要插入学生的专业:";
+	cout << "please input the student major:";
 	cin >> smajor;
 	stu[top].setmajor(smajor);
 	cout << endl;
-	cout << "请输入要插入学生的班级:";
+	cout << "please input the student class:";
 	cin >> sclass;
 	stu[top].setclass(sclass);
 	cout << endl;
-	cout << "请输入要插入学生的手机号:";
+	cout << "please input the student phone number:";
 	cin >> smobile;
 	stu[top].setmobile(smobile);
 	cout << endl;
-	cout << "要插入的学生信息为:" << endl;
+	cout << "the insert student info is:" << endl;
 	stu[top].disp();
 	cout << endl;
 	top++;
 }
 
-//学号删除一个学生
+//according to student number delete
 void Studentclass::deleteno()
 {
-	int temp = -1; //要删除的学生下标
+	int temp = -1; //the tag of delete student
 	string sno;
-	cout << "请输入要删除学生的学号:";
+	cout << "please input the delete student number:";
 	cin >> sno;
 	for (int i = 0; i < top; i++)
 	{
@@ -279,19 +279,19 @@ void Studentclass::deleteno()
 		}
 	}
 	if (temp != -1)
-		cout << "删除完成!" << endl
+		cout << "Delete Successful!" << endl
 			 << endl;
 	else
-		cout << "没有找到学号为" << sno << "的学生!" << endl
+		cout << "Can not find the student number is:" << sno << endl
 			 << endl;
 }
 
-//姓名删除一个学生
+//according to student name delete
 void Studentclass::deletename()
 {
-	int temp = -1; //要删除的学生下标
+	int temp = -1; //the tag og delete student
 	string sname;
-	cout << "请输入要删除学生的姓名:";
+	cout << "please input the delete student name:";
 	cin >> sname;
 	for (int i = 0; i < top; i++)
 	{
@@ -302,19 +302,19 @@ void Studentclass::deletename()
 		}
 	}
 	if (temp != -1)
-		cout << "删除完成!" << endl
+		cout << "Delete Successful!" << endl
 			 << endl;
 	else
-		cout << "没有找到姓名为" << sname << "的学生!" << endl
+		cout << "Can not find the student name is:" << sname << endl
 			 << endl;
 }
 
-//专业删除一个学生
+//according to student major delete
 void Studentclass::deletemajor()
 {
-	int temp = -1; //要删除的学生下标
+	int temp = -1; //the tag og delete student
 	string smajor;
-	cout << "请输入要删除学生的专业:";
+	cout << "please input the delete student major:";
 	cin >> smajor;
 	for (int i = 0; i < top; i++)
 	{
@@ -325,19 +325,19 @@ void Studentclass::deletemajor()
 		}
 	}
 	if (temp != -1)
-		cout << "删除完成!" << endl
+		cout << "Delete Successful!" << endl
 			 << endl;
 	else
-		cout << "没有找到专业为" << smajor << "的学生!" << endl
+		cout << "Can not find the student major is:" << smajor << endl
 			 << endl;
 }
 
-//班级删除一个学生
+//according to student class delete
 void Studentclass::deleteclass()
 {
-	int temp = -1; //要删除的学生下标
+	int temp = -1; //the tag og delete student
 	string sclass;
-	cout << "请输入要删除学生的班级:";
+	cout << "please input the delete student class:";
 	cin >> sclass;
 	for (int i = 0; i < top; i++)
 	{
@@ -348,19 +348,19 @@ void Studentclass::deleteclass()
 		}
 	}
 	if (temp != -1)
-		cout << "删除完成!" << endl
+		cout << "Delete Successful!" << endl
 			 << endl;
 	else
-		cout << "没有找到班级为" << sclass << "的学生!" << endl
+		cout << "Can not find the student class is:" << sclass << endl
 			 << endl;
 }
 
-//手机号删除一个学生
+//according to phone number delete
 void Studentclass::deletemobile()
 {
-	int temp = -1; //要删除的学生下标
+	int temp = -1; //the tag og delete student
 	string smobile;
-	cout << "请输入要删除学生的手机号:";
+	cout << "please input the delete student phone number:";
 	cin >> smobile;
 	for (int i = 0; i < top; i++)
 	{
@@ -371,20 +371,20 @@ void Studentclass::deletemobile()
 		}
 	}
 	if (temp != -1)
-		cout << "删除完成!" << endl
+		cout << "Delete Successful!" << endl
 			 << endl;
 	else
-		cout << "没有找到手机号为" << smobile << "的学生!" << endl
+		cout << "Can not find the student phone number is:" << smobile << endl
 			 << endl;
 }
 
-//批量导入
+//insert many students
 void Studentclass::insertall()
 {
 	ifstream in("s.txt");
 	if (!in)
 	{
-		cout << "文件打不开!" << endl;
+		cout << "Can not open the file!" << endl;
 	}
 	while (!in.eof())
 	{
@@ -392,27 +392,27 @@ void Studentclass::insertall()
 		top++;
 	}
 	in.close();
-	cout << "学生信息导入完成!" << endl
+	cout << "Insert successful!" << endl
 		 << endl;
 }
 
-//删除所有学生信息
+//delete all student info
 void Studentclass::deleteall()
 {
 	for (int i = 0; i < top; i++)
 	{
 		stu[i].settag();
 	}
-	cout << "已全部删除!" << endl
+	cout << "All Delte Successful!" << endl
 		 << endl;
 }
 
-//学号查询
+//according to student number search
 void Studentclass::searchno()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sno;
-	cout << "请输入要查询学生的学号:";
+	cout << "please input the search student number:";
 	cin >> sno;
 	cout << endl;
 	for (int i = 0; i < top; i++)
@@ -442,12 +442,12 @@ int Studentclass::searchno(string sno)
 	return k;
 }
 
-//姓名查询
+//according to student name search
 void Studentclass::searchname()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sname;
-	cout << "请输入要查询学生的姓名:";
+	cout << "please input the search student name:";
 	cin >> sname;
 	cout << endl;
 	for (int i = 0; i < top; i++)
@@ -465,12 +465,12 @@ void Studentclass::searchname()
 			 << endl;
 }
 
-//专业查询
+//according to student major search
 void Studentclass::searchmajor()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string smajor;
-	cout << "请输入要查询学生的专业:";
+	cout << "please input the search student major:";
 	cin >> smajor;
 	cout << endl;
 	for (int i = 0; i < top; i++)
@@ -488,12 +488,12 @@ void Studentclass::searchmajor()
 			 << endl;
 }
 
-//班级查询
+//according to student class search
 void Studentclass::searchclass()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sclass;
-	cout << "请输入要查询学生的班级:";
+	cout << "please input the search student class:";
 	cin >> sclass;
 	cout << endl;
 	for (int i = 0; i < top; i++)
@@ -511,12 +511,12 @@ void Studentclass::searchclass()
 			 << endl;
 }
 
-//手机号查询
+//according to phone number search
 void Studentclass::searchmobile()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string smobile;
-	cout << "请输入要查询学生的手机号:";
+	cout << "please input the search student phone number:";
 	cin >> smobile;
 	cout << endl;
 	for (int i = 0; i < top; i++)
@@ -537,7 +537,7 @@ void Studentclass::searchmobile()
 //更新姓名
 void Studentclass::updatename()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sno;
 	string sname;
 	cout << "请输入要修改的学生的学号:";
@@ -561,7 +561,7 @@ void Studentclass::updatename()
 //更新专业
 void Studentclass::updatemajor()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sno;
 	string smajor;
 	cout << "请输入要修改的学生的学号:";
@@ -585,7 +585,7 @@ void Studentclass::updatemajor()
 //更新班级
 void Studentclass::updateclass()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sno;
 	string sclass;
 	cout << "请输入要修改的学生的学号:";
@@ -609,7 +609,7 @@ void Studentclass::updateclass()
 //更新手机号
 void Studentclass::updatemobile()
 {
-	int k = 0; //查询标记1:Yes 0:No
+	int k = 0; //search tag 1:Yes 0:No
 	string sno;
 	string smobile;
 	cout << "请输入要修改的学生的学号:";
